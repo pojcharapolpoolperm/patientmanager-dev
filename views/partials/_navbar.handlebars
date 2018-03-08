@@ -1,0 +1,104 @@
+<nav>
+  <div class="nav-wrapper cyan darken-3 no-print">
+    <a href="/patients/dashboard" class="brand-logo center">โรงพยาบาลเจ้าพระยาอภัยภูเบศร</a>
+    <a href="#" data-activates="main-menu" class="button-collapse show-on-large">
+      <i class="fa fa-bars"></i>
+    </a>
+    {{!-- Right Nav --}}
+    <ul id="nav-desktop" class="right hide-on-small-and-down">
+      <li>
+        <a href="/user/logout">
+          <i class="fa fa-sign-out-alt"></i> Logout</a>
+      </li>
+    </ul>
+
+    {{!-- Side Menu --}}
+    <ul class="side-nav" id="main-menu">
+      <p class="center grey lighten-2">{{user.firstName}} {{user.lastName}}</p>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">
+              <i class="fa fa-user-circle"></i>
+              <span style="padding-left:1em;">Patient</span><i class="material-icons right">expand_more</i>
+            </a>
+            <div class="collapsible-body">
+              <ul>
+                <li>
+                  <a href="/patients/dashboard">
+                    <i class="fa fa-search"></i>
+                    <span style="padding-left:1.25em;">Search</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/patient/add/new">
+                    <i class="fa fa-user-plus"></i>
+                    <span style="padding-left:1em;">Add Patient</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">
+              <i class="fa fa-cog"></i>
+              <span style="padding-left:1em;">Setting</span> 
+              <span style="padding-left:1em;"></span><i class="material-icons right">expand_more</i>
+            </a>
+            <div class="collapsible-body">
+              <ul>
+                <li>
+                  <a href="/user/profile/{{user.id}}">
+                    <i class="fa fa-user"></i>
+                    <span style="padding-left:1.25em;">My Profile</span>
+                  </a>
+                </li>
+                {{#if user.admin}}
+                <li>
+                  <ul class="collapsible collapsible-accordion">
+                    <li>
+                      <a class="collapsible-header">
+                        <i class="fa fa-users"></i>
+                        <span style="padding-left:1em;">Manage Users</span>
+                      </a>
+                      <div class="collapsible-body">
+                        <ul>
+                          <li>
+                            <a href="/user/register" style="padding-left:4em;">
+                              <i class="fa fa-plus"></i>
+                              <span style="padding-left:1.25em;">Add User</span>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="/user/show" style="padding-left:4em;">
+                              <i class="fa fa-pencil-alt"></i>
+                              <span style="padding-left:1.25em;">Edit User</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                {{/if}}
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <a class="collapsible-header" href="/user/logout">
+          <i class="fa fa-sign-out-alt"></i>
+          <span style="padding-left:1.25em;">Logout</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</nav>

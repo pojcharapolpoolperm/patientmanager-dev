@@ -1,0 +1,61 @@
+<div>
+  <h4 style="margin-bottom: 30px; font-family: Ekk;">รายชื่อพยาบาล</h4>
+  {{#if users}}
+
+  <table class="striped z-depth-3" style="margin-bottom: 20px;">
+    <thead>
+      <tr>
+        <th>
+          <span class="dashboard-text">ชื่อ-สกุล</span>
+        </th>
+        <th>วันที่บันทึก</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each users}}
+      <tr>
+        <td>
+          <a href="#" class="dashboard-text record-text">{{firstName}} {{lastName}}</a>
+        </td>
+        <td>
+          <span class="record-text">{{formatDate date 'MMMM Do YYYY'}}</span>
+        </td>
+        <td class="center">
+          {{!-- <a href="/user/manage/show/{{_id}}" class="btn-floating btn tooltipped" data-position="top" data-delay="20" data-tooltip="เพิ่มเติม">
+            <i class="material-icons">visibility</i>
+          </a> --}}
+          <a href="/user/manage/edit/{{_id}}" class="btn-floating tooltipped" data-position="top" data-delay="20" data-tooltip="แก้ไข"
+            name="form4">
+            <i class="material-icons">edit</i>
+          </a>
+          <form action="/user/manage/remove/{{_id}}?_method=DELETE" method="post" id="delete-form">
+            <input type="hidden" name="_method" value="DELETE">
+
+            <!-- Modal Trigger -->
+            <a class="waves-effect waves-light modal-trigger btn-floating red tooltipped right" style="margin-right: 20px !important;" data-position="top" data-delay="20" data-tooltip="ลบผู้ใช้"
+              href="#modal{{id}}">
+              <i class="material-icons">delete</i>
+            </a>
+
+            <!-- Modal Structure -->
+            <div id="modal{{id}}" class="modal">
+              <div class="modal-content">
+                <h4>Delete Confirmation</h4>
+                <p style="font-size: 18px !important;">ยืนยันการลบผู้ใช้ <span style="font-weight: bold;">{{firstName}} {{lastName}}</span></p>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ตกลง</button>
+                <a class="modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ยกเลิก</a>
+              </div>
+            </div>
+
+          </form>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+  <p>No user.</p>
+  {{/if}}
+</div>

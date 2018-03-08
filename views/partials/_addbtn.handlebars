@@ -1,0 +1,24 @@
+{{#unless print}}
+<div class="col s12 no-print" id="removeAddBtn">
+  <div class="fixed-action-btn horizontal no-print">
+    <a class="btn-floating btn-large light-green darken-2 z-depth-3 no-print">
+      <i class="large material-icons">person_add</i>
+    </a>
+    <ul class="no-print">
+      <li>
+        <a class="btn-floating teal darken-3 tooltipped z-depth-3 no-print" id="addPatient" data-position="top" data-delay="20"
+          data-tooltip="เพิ่มผู้ป่วย" href="/patient/add/new">
+          <i class="material-icons no-print">person_outline</i>
+        </a>
+      </li>
+      {{#if user.admin}}
+      <li>
+        <a class="btn-floating teal darken-3 tooltipped z-depth-3 no-print" id="addNurse" data-position="top" data-delay="20"
+          data-tooltip="เพิ่มพยาบาล" href="/user/register">
+          <i class="material-icons no-print">assignment_ind</i>
+        </a>
+      </li> {{/if}}
+    </ul>
+  </div>
+</div>
+{{/unless}}

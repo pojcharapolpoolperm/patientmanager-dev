@@ -1,0 +1,459 @@
+@page {
+  size: 21cm 29.7cm;
+  margin: 0; /* change the margins as you want them to be. */
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.printContainer {
+  width: 830px; 
+  padding:  60px 80px;
+  line-height: 2.5; 
+  font-size: 12px;
+  /* border: black solid 1px; */
+  margin: 0 auto;
+}
+.printContainer1 {
+  width: 830px; 
+  padding:  60px 80px 0 80px;
+  line-height: 2.5; 
+  font-size: 12px;
+  /* border: black solid 1px; */
+  margin: 0 auto;
+}
+.printContainer2 {
+  width: 830px; 
+  padding:  0px 80px 0 80px;
+  line-height: 2.5; 
+  font-size: 12px;
+  /* border: black solid 1px; */
+  margin: 0 auto;
+}
+.title {
+  padding-left: auto;
+  padding-right: auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input[type='checkbox']{
+  vertical-align: middle;
+  position: relative;
+  bottom: 2px;
+}
+
+.value {
+  font-weight: 700;
+  border-bottom: 1px dotted black;   
+  text-align: center;
+}
+
+table{
+  width: 830px;
+}
+
+.form1, .form1 th, .form1 td {
+  border: black 1px solid;
+  border-collapse: collapse;
+}
+
+.form1 th, .form1 td {
+  padding: 5px;
+}
+
+#form1 td{
+ text-align: center;
+}
+
+.form1-line1{
+  display: grid;
+  grid-template-columns: 12% 22% 3.25% 11.5% 28% 3% 20.25%;
+}
+.form1-line2and3{
+  display: grid;
+  grid-template-columns: 3.25% 96.75%;
+}
+.form1-line4{
+  display: grid;
+  grid-template-columns: 1.25% 5% 1.25% 5% 1.25% 5% 1% 5% 2.25% 6% 6% 3% 11% 3% 11% 3% 9% 5% 4.75% 11.25%;
+}
+.form1-line5{
+  display: grid;
+  grid-template-columns: 7.75% 6.25% 5% 2.5% 6.25% 6% 74%;
+}
+.form1-line6{
+  display: grid;
+  grid-template-columns: 4% 7% 4.5% 7% 4.5% 7% 5.25% 7% 3.5% 7% 8% 7% 2% 7% 2% 7% 3.5% 6.75%;
+}
+
+.form1-line7{
+  display: grid;
+  grid-template-columns: 7.5% 29.75% 18.5% 44.25%;
+}
+
+.form1-line8{
+  display: grid;
+  grid-template-columns: 32.5% 67.5%;
+}
+.form1-line9{
+  display: grid;
+  grid-template-columns: 10.5% 89.5%;
+}
+.form1-line10{
+  display: grid;
+  grid-template-columns: 9% 5.25% 10% 5% 10% 4.25% 25% 4.5% 27%;
+}
+.form1-line11{
+  display: grid;
+  grid-template-columns: 61.75% 38.25%;
+}
+.form1-line12{
+  display: grid;
+  grid-template-columns: 6.75% 93.25%;
+}
+.form1-line13{
+  display: grid;
+  grid-template-columns: 4.5% 7.5% 3% 2% 7.5% 5% 2% 7.5% 5% 1.75% 7.5% 7% 2.5% 7.5% 4% 2% 7.75% 3%;
+}
+.form1-line14{
+  display: grid;
+  grid-template-columns: 3% 16.5% 3.5% 17% 10% 12%;
+}
+.form1-line15{
+  display: grid;
+  grid-template-columns: 5.5% 34.5% 10% 2% 13% 5% 13.5% 3% 13.5%;
+}
+.form1-line16{
+  display: grid;
+  grid-template-columns: 4% 36% 10% 8.25% 16.75% 5% 2% 17% 1%;
+}
+.form1-line17{
+  display: grid;
+  grid-template-columns: 4% 36% 10% 4.5% 20.5% 6.5% 18.5%;
+}
+.form1-line18{
+  display: grid;
+  grid-template-columns: 6.5% 33.5% 10% 2% 27.5% 1.5% 18% 1%;
+}
+.form1-line19{
+  display: grid;
+  grid-template-columns: 7.5% 32.5% 10% 4.75% 45.25%;
+}
+.form1-line20and21{
+  display: grid;
+  grid-template-columns: 4.75% 35.25%;
+}
+.form1-line22{
+  display: grid;
+  grid-template-columns: 11% 18.75% 2% 9.25% 18.5% 7.5% 15% 4.75% 13.25%;
+}
+.form1-line23{
+  display: grid;
+  grid-template-columns: 3.5% 96.5%;
+}
+.form1-line24{
+  display: grid;
+  grid-template-columns: 11.75% 88.25%;
+}
+.form1-line25{
+  display: grid;
+  grid-template-columns: 50.5% 4% 20.5% 1% 20% 2%;
+}
+.form1-line26{
+  display: grid;
+  grid-template-columns: 5% 31% 2.75% 10.25% 2% 3.25% 7.5% 6.25% 11.75%;
+}
+.form1-line27{
+  display: grid;
+  grid-template-columns: 2.25% 15.75% 2.5% 15.5% 4% 40%;
+}
+
+.form2-line1{
+  display: grid;
+  grid-template-columns: 5% 29% 3% 7.5% 2% 2.25% 18% 4% 29.25%;
+}
+.form2-line2{
+  display: grid;
+  grid-template-columns: 1.25% 5% 1.25% 5% 1.25% 5% 1% 5% 2.5% 5% 3% 3% 10% 3% 9.5% 39.25%;
+}
+.form2-line3{
+  display: grid;
+  grid-template-columns: 28.5% 71.5%;
+}
+.form2-line4{
+  display: grid;
+  grid-template-columns: 8% 30% 2% 10% 14% 10.5% 2% 10.5% 2%;
+}
+.form2-line5{
+  display: grid;
+  grid-template-columns: 11.25% 26.75% 2% 10% 14% 10.5% 2% 10.5% 2%;
+}
+.form2-line6{
+  display: grid;
+  grid-template-columns: 9.5% 15.5% 3% 10% 1% 11% 14% 10.5% 2% 10.5% 2%;
+}
+.form2-line7{
+  display: grid;
+  grid-template-columns: 8% 30% 1%;
+}
+.form2-line8{
+  display: grid;
+  grid-template-columns: 28% 3% 20% 3% 15% 2% 5% 24%;
+}
+.form2-line9{
+  display: grid;
+  grid-template-columns: 16% 84%;
+}
+.form2-line10{
+  display: grid;
+  grid-template-columns: 22% 29.25% 6.5% 42.25%;
+}
+.form2-line11{
+  display: grid;
+  grid-template-columns: 57.25% 6.75% 26% 10%;
+}
+.form2-line12{
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.form2-line13{
+  display: grid;
+  grid-template-columns: 5.75% 14.3% 80%;
+}
+.form2-line14{
+  display: grid;
+  grid-template-columns: 5.75% 14.3% 80%;
+}
+.form2-line15{
+  display: grid;
+  grid-template-columns: 45% 6% 10% 3% 8% 10% 3%;
+}
+.form2-line16{
+  display: grid;
+  grid-template-columns: 20% 40% 20%;
+}
+.form2-line17{
+  display: grid;
+  grid-template-columns: 20% 40% 20%;
+}
+.form2-line18{
+  display: grid;
+  grid-template-columns: 40% 9.5% 10% 3% 2% 10% 1% 10% 3%;
+}
+.form2-line19{
+  display: grid;
+  grid-template-columns: 16% 74%;
+}
+.form2-line20{
+  display: grid;
+  grid-template-columns: 3% 15% 4% 2% 8% 1% 15% 7% 2% 8% 5% 3% 26%;
+}
+.form2-line21{
+  display: grid;
+  grid-template-columns: 5% 3% 10% 5% 10% 5% 10% 4% 5% 4% 5% 4.5% 5%;
+}
+.form2-line22{
+  display: grid;
+  grid-template-columns: 2% 10% 4% 2% 10% 4% 2% 10% 4% 35%;
+}
+.form2-line23{
+  display: grid;
+  grid-template-columns: 12.5% 87.5%;
+}
+.form2-line24{
+  display: grid;
+  grid-template-columns: 10% 15% 3% 50% 3%;
+}
+.form2-line25{
+  display: grid;
+  grid-template-columns: 12% 32% 10% 12% 32%;
+}
+.form2-line26{
+  display: grid;
+  grid-template-columns: 8% 4% 3% 2% 4% 4% 1% 4% 4% 2% 4% 14% 7.5% 36.5%;
+}
+.form2-line27{
+  display: grid;
+  grid-template-columns: 13.5% 30.5% 10% 6% 38%;
+}
+.form2-line28{
+  display: grid;
+  grid-template-columns: 9% 35% 10% 7% 37%;
+}
+.form2-line29{
+  display: grid;
+  grid-template-columns: 11% 33% 10% 10.5% 33.5%;
+}
+.form2-line30{
+  display: grid;
+  grid-template-columns: 10.5% 33.5% 10% 5% 29% 10%;
+}
+
+/* Form3 */
+.upper-border{
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.middle-border{
+  border-left: black 1px solid;
+  border-right: black 1px solid;
+}
+
+.lower-border{
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.form3-line1{
+  display: grid;
+  grid-template-columns: 5.5% 14.5% 63% 7% 10%;
+}
+.form3-line2{
+  display: grid;
+  grid-template-columns: 5% 25% 2% 10% 2% 2.25% 20.75% 9% 24%;
+}
+.form3-line3{
+  display: grid;
+  grid-template-columns: 13% 10.25% 5.75% 15% 3.75% 19.25% 9% 24%;
+}
+.form3-line4{
+  display: grid;
+  grid-template-columns: 4% 18% 4.25% 19.75% 5.5% 15.5% 9% 24%;
+}
+.form3-line5{
+  display: grid;
+  grid-template-columns: 10% 30% 4% 23% 9% 24%;
+}
+.form3-line6{
+  display: grid;
+  grid-template-columns: 7% 20% 3% 10% 10% 3% 30%;
+}
+.form3-line7{
+  display: grid;
+  grid-template-columns: 8% 75%;
+}
+.form3-line8{
+  display: grid;
+  grid-template-columns: 11.5% 5.5% 1% 5.5% 2.25% 5.5% 2.5% 49.25%;
+}
+.form3-line9{
+  display: grid;
+  grid-template-columns: 9.5% 21.5% 8% 61%;
+}
+.form3-line10{
+  display: grid;
+  grid-template-columns: 13.5% 7% 3% 1% 7% 4.5% 1% 7% 4% 2.5% 7% 5% 3% 13% 1%;
+}
+.form3-line11{
+  display: grid;
+  grid-template-columns: 12% 4.5% 15.5% 4.5% 2% 12% 4% 3% 18%;
+}
+.form3-line12{
+  display: grid;
+  grid-template-columns: 8% 35% 8% 35%;
+}
+
+/* Form4 */
+.block-wrapper{
+  border: 1px solid black;
+  padding: 0 10px;
+}
+
+.block-wrapper1{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 0 10px;
+}
+
+.block{
+  padding-left: 15px;
+  border-left: black 1px solid;
+}
+
+.form4-line1{
+  display: grid;
+  grid-template-columns: 29% 10% 32% 26%;
+}
+.form4-line2{
+  display: grid;
+  grid-template-columns: 8.5% 20% 2.5% 10% 2% 3% 10% 15% 14.85% 12%;
+}
+.form4-line3{
+  display: grid;
+  grid-template-columns: 8.25% 47.75% 15% 14.85% 5% 7%;
+}
+.form4-line4{
+  display: grid;
+  grid-template-columns: 20% 12.5% 12% 20% 6.5% 14.85% 6% 7%;
+}
+.form4-line5{
+  display: grid;
+  grid-template-columns: 9.85% 10.25% 12.5% 12% 5% 18.5% 3% 2% 25% ;
+}
+.form4-line6{
+  display: grid;
+  grid-template-columns: 3.5% 15% 3% 14% 3% 8% 2% 5% 15% 2.5% 9% 18%;
+}
+.form4-line7{
+  display: grid;
+  grid-template-columns: 27% 15% 3% 10% 1%;
+}
+.form4-line8{
+  display: grid;
+  grid-template-columns: 12% 7% 7% 8% 5% 16%;
+}
+.form4-line9{
+  display: grid;
+  grid-template-columns: 17.75% 81.25%;
+}
+.form4-line10{
+  display: grid;
+  grid-template-columns: 17% 1.5% 4% 1.5% 4% 1.5% 4% 1.25% 4% 2.25% 4% 5% 5% 44%;
+}
+.form4-line11{
+  display: grid;
+  grid-template-columns: 12% 87%;
+}
+.form4-line12{
+  display: grid;
+  grid-template-columns: 10.5% 7% 3% 3% 7% 4% 3% 7% 4% 3% 7% 5% 4.5% 7% 1%;
+}
+.form4-line13{
+  display: grid;
+  grid-template-columns: 3% 96%;
+}
+.form4-line14{
+  display: grid;
+  grid-template-columns: 19% 10%;
+}
+.form4-line15{
+  display: grid;
+  grid-template-columns: 17% 7% 3.5% 3.5% 19.5% 3% 12% 7% 3.5% 3.5% 19.5%;
+}
+.form4-line16{
+  display: grid;
+  grid-template-columns: 17% 7% 3.5% 3.5% 19.5% 3% 12% 7% 3.5% 3.5% 19.5%;
+}
+.form4-line17{
+  display: grid;
+  grid-template-columns: 17% 7% 3.5% 3.5% 68%;
+}
+.form4-line18{
+  display: grid;
+  grid-template-columns: 17% 18% 64%;
+}
+.form4-line19{
+  display: grid;
+  grid-template-columns: 9.5% 17.5% 9.5% 14.5% 4% 15.5% 4.5% 15%;
+}
+.form4-line20{
+  display: grid;
+  grid-template-columns: 10.5% 25% 8% 15% 3% 13% 9% 15.5%;
+}
+.form4-nameline{
+  display: grid;
+  grid-template-columns: 5% 9.75% 27.25% 2.75% 10.25% 3% 3% 15% 3.5% 15.5%;
+}

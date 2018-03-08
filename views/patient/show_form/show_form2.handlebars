@@ -1,0 +1,1048 @@
+<br>
+<div class="row z-depth-3 no-print">
+  <div class="col s12 show">
+
+    <form action="/patient/edit/form/2/{{form2.id}}?_method=PUT" method="post">
+      <input type="hidden" name="_method" value="PUT">
+      <div class="row"></div>
+      <div class="col s12 center">
+        <span style="font-size: 125%; font-weight: bold;">
+          <i class="fa fa-pencil-alt"></i> แบบบันทึกรายงานการคลอด</span>
+      </div>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="col s4">
+        <label for="">ชื่อ-สกุล</label>
+        <input type="text" name="patient_name" placeholder="ชื่อ-สกุล" value="{{patient.name}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">อายุ (ปี)</label>
+        <input type="number" name="patient_age" placeholder="อายุ (ปี)" value="{{patient.age}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">HN</label>
+        <input type="text" name="HN" placeholder="HN" value="{{patient.HN}}" readonly>
+      </div>
+      <div class="col s4">
+        <label for="">แพทย์</label>
+        <input type="text" name="doctor" placeholder="แพทย์" value="{{form2.doctor}}" readonly>
+      </div>
+
+      <div class="row"></div>
+
+      <div class="col s1">
+        <label for="">G</label>
+        <input type="text" name="G" placeholder="G" value="{{patient.G}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">P</label>
+        <input type="text" name="P" placeholder="P" value="{{patient.P}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">A</label>
+        <input type="text" name="A" placeholder="A" value="{{patient.A}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">L</label>
+        <input type="text" name="L" placeholder="L" value="{{patient.L}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">Last (ปี)</label>
+        <input type="text" name="Last" placeholder="Last (ปี)" value="{{form2.Last}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">Preg (wks)</label>
+        <input type="text" name="Preg" placeholder="Preg (wks)" value="{{form2.Preg}}" readonly>
+      </div>
+      <div class="col s5">
+        <label for="">ภาวะแทรกซ้อน</label>
+        <input type="text" name="Preg_sym" placeholder="ภาวะแทรกซ้อน" value="{{form2.Preg_sym}}" readonly>
+      </div>
+
+      <div class="col s3">
+        <label for="">Labour</label>
+        <select id="Labour" name="Labour" disabled>
+          {{#select form2.Labour}}
+          <option value="0">Labour</option>
+          <option value="1">Spontaneous</option>
+          <option value="2">Induction Method</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s9" id="induction_field">
+        <label for="">Method</label>
+        <input type="text" name="Labour_field" placeholder="" value="{{form2.Labour_field}}" readonly>
+      </div>
+      <div class="row"></div>
+
+      <div class="col s12">
+        <div class="col s4">
+          <label for="">เจ็บครรภ์จริง (น.)</label>
+          <input type="text" name="Labour_hurt" value="{{form2.Labour_hurt}}" readonly>
+        </div>
+        <div class="col s2 l3"></div>
+        <div class="col s3 l2">
+          <label for="">ระยะที่ 1 ของการคลอด</label>
+          <input type="text" name="phase1_hour" value="{{form2.phase1_hour}}" readonly>
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <p style="color: gray;">ชม</p>
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <input type="text" name="phase1_min" value="{{form2.phase1_min}}" readonly>
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <p style="color: gray;">นาที</p>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="col s4">
+          <label for="">ปากมกลูกเปิดหมด (น.)</label>
+          <input type="text" name="uterus" value="{{form2.uterus}}" readonly>
+        </div>
+        <div class="col s2 l3"></div>
+        <div class="col s3 l2">
+          <label for="">ระยะที่ 2 ของการคลอด</label>
+          <input type="text" name="phase2_hour" value="{{form2.phase2_hour}}" readonly>
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <p style="color: gray;">ชม</p>
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <input type="text" name="phase2_min" value="{{form2.phase2_min}}" readonly>
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <p style="color: gray;">นาที</p>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="col s2 l3">
+          <label for="">ทารกคลอดวันที่</label>
+          <input type="text" name="bornDate" value="{{form2.bornDate}}" readonly>
+        </div>
+        <div class="col s2 l1">
+          <label for="">เวลา (น.)</label>
+          <input type="text" name="bornTime" value="{{form2.bornTime}}" readonly>
+        </div>
+        <div class="col s2 l3"></div>
+        <div class="col s3 l2">
+          <label for="">ระยะที่ 3 ของการคลอด</label>
+          <input type="text" name="phase3_hour" value="{{form2.phase3_hour}}" readonly>
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <p style="color: gray;">ชม</p>
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <input type="text" name="phase3_min" value="{{form2.phase3_min}}" readonly>
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <p style="color: gray;">นาที</p>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="col s4">
+          <label for="">รกคลอดเวลา (น.)</label>
+          <input type="text" name="placenta" value="{{form2.placenta}}" readonly>
+        </div>
+      </div>
+
+
+      <div class="row"></div>
+
+      <div class="col s2">
+        <label for="">Type of MR :</label>
+        <select id="MR" name="MR" disabled>
+          {{#select form2.MR}}
+          <option value="0">MR</option>
+          <option value="1">Spontaneous</option>
+          <option value="2">ARM</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s2">
+        <label for="">วันที่</label>
+        <input type="text" name="MR_date" value="{{form2.MR_date}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">เวลา (น.)</label>
+        <input type="text" name="MR_time" value="{{form2.MR_time}}" readonly>
+      </div>
+      <div class="col s6">
+        <label for="">ลักษณะ</label>
+        <input type="text" name="appearance" value="{{form2.appearance}}" readonly>
+      </div>
+
+      <div class="col s12">
+        <label for="">Medication(Time &amp; does)</label>
+        <input type="text" name="med_time_does" value="{{form2.med_time_does}}" readonly>
+      </div>
+
+      <div class="col s2">
+        <label for="">Delivery :</label>
+        <select id="Delivery" name="Delivery" disabled>
+          {{#select form2.Delivery}}
+          <option value="0">Delivery</option>
+          <option value="1">Normal</option>
+          <option value="2">Abnormal</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s4">
+        <label for="">.</label>
+        <input type="text" name="delivery_field" value="{{form2.delivery_field}}" readonly>
+      </div>
+      <div class="col s4">
+        <label for="">Indication</label>
+        <input type="text" name="Indication" placeholder="Indication" value="{{form2.Indication}}" readonly>
+      </div>
+
+      <div class="row"></div>
+      <div class="col s7"></div>
+      <div class="col s5">
+        <div class="col s3">
+          <p style="color: gray;" class="right">ผู้ทำคลอด</p>
+        </div>
+        <div class="col s6">
+          <input type="text" class="left" name="birth_delivery" value="{{form2.birth_delivery}}" readonly>
+        </div>
+        <div class="col s3">
+          <p style="color: gray;" class="left">แพทย์/พยาบาล</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <div class="col s6">
+            <label for="">Injuries:</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="col s2">
+          <label for="">Type of Episiotomy</label>
+          <select id="Episiotomy" name="Episiotomy" disabled>
+            {{#select form2.Episiotomy}}
+            <option value="0">Episiotomy</option>
+            <option value="1">Median</option>
+            <option value="2">RML</option>
+            <option value="3">LML</option>
+            {{/select}}
+          </select>
+        </div>
+
+        <div class="col s3 l2">
+          <label for="">Lacerated: Perineum</label>
+          <select id="Perineum" name="Perineum" disabled>
+            {{#select form2.Perineum}}
+            <option value="0">Perineum</option>
+            <option value="1">NO Tear</option>
+            <option value="2">1</option>
+            <option value="3">2</option>
+            <option value="4">3</option>
+            <option value="5">Rectum</option>
+            <option value="6">Cervix</option>
+            {{/select}}
+          </select>
+        </div>
+
+        <div class="col s3">
+          <label for="">Method of Suture</label>
+          <select id="Suture" name="Suture" disabled>
+            {{#select form2.Suture}}
+            <option value="0">Suture</option>
+            <option value="1">Subcutaneous with chromic cutgut</option>
+            <option value="2">Others</option>
+            {{/select}}
+          </select>
+        </div>
+      </div>
+
+
+
+      <div class="row"></div>
+      <div class="col s2">
+        <label for="">รกและสายสะดือ:</label>
+        <select id="placenta_cord" name="placenta_cord" disabled>
+          {{#select form2.placenta_cord}}
+          <option value="0">รกและสายสะดือ</option>
+          <option value="1">Spontaneous delivery</option>
+          <option value="2">Manual removal</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s2">
+        <label for="">น้ำหนักรก (กรัม)</label>
+        <input type="text" name="placenta_w" value="{{form2.placenta_w}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">สายสะดือยาว (ซม.)</label>
+        <input type="text" name="cord_length" value="{{form2.cord_length}}" readonly>
+      </div>
+      <div class="row"></div>
+      <div class="col s2">
+        <label for="">ลักษณะรก:</label>
+        <select id="placenta_app" name="placenta_app" disabled>
+          {{#select form2.placenta_app}}
+          <option value="0">ลักษณะรก</option>
+          <option value="1">ปกติ</option>
+          <option value="2">ผิดปกติ</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s2">
+        <label for="">.</label>
+        <input type="text" name="placenta_app_field" value="{{form2.placenta_app_field}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">.</label>
+        <select id="placenta_all" name="placenta_all" disabled>
+          {{#select form2.placenta_all}}
+          <option value="1">ครบ</option>
+          <option value="2">ไม่ครบ</option>
+          {{/select}}
+        </select>
+      </div>
+
+      <div class="col s7">
+        <label for="">ลักษณะผิดปกติ (ระบุ)</label>
+        <input type="text" name="abnormalcord_text" value="{{form2.abnormalcord_text}}" readonly>
+      </div>
+
+      <div class="col s2 m3">
+        <label for="">POSTPARTUM CONDITION</label>
+        <select id="POSTPARTUM" name="POSTPARTUM" value="{{form2.POSTPARTUM}}" disabled>
+          {{#select form2.POSTPARTUM}}
+          <option value="1">Normal</option>
+          <option value="2">Abnormal</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s3 l2">
+        <label for="">Total blood loss (c.c.)</label>
+        <input type="text" name="blood_loss" value="{{form2.blood_loss}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">BP</label>
+        <input type="text" name="BP" value="{{form2.BP}}" readonly>
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <p style="color: gray;" class="center-align">/</p>
+      </div>
+      <div class="col s1">
+        <label for="">mmHg</label>
+        <input type="text" name="mmHg" value="{{form2.mmHg}}" readonly>
+      </div>
+
+      <div class="col s8">
+        <label for="">Medication (Time &amp; does) </label>
+        <input type="text" name="med_time_does2" value="{{form2.med_time_does2}}" readonly>
+      </div>
+
+      <div class="row"></div>
+
+      <div class="col s2">
+        <label for="">เวลา (น.)</label>
+        <input type="text" class="timepicker" name="time1" value="{{form2.time1}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">BP</label>
+        <input type="text" name="BP1" value="{{form2.BP1}}" readonly>
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <p style="color: gray;" class="center-align">/</p>
+      </div>
+      <div class="col s1">
+        <label for="">mmHg</label>
+        <input type="text" name="mmHg1" value="{{form2.mmHg1}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">PR/min</label>
+        <input type="text" name="PR1" value="{{form2.PR1}}" readonly>
+      </div>
+      <div class="col s5">
+        <label for="">note</label>
+        <input type="text" name="note1" value="{{form2.note1}}" readonly>
+      </div>
+
+      <div class="col s2">
+        <label for="">เวลา (น.)</label>
+        <input type="text" class="timepicker" name="time2" value="{{form2.time2}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">BP</label>
+        <input type="text" name="BP2" value="{{form2.BP2}}" readonly>
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <p style="color: gray;" class="center-align">/</p>
+      </div>
+      <div class="col s1">
+        <label for="">mmHg</label>
+        <input type="text" name="mmHg2" value="{{form2.mmHg2}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">PR/min</label>
+        <input type="text" name="PR2" value="{{form2.PR2}}" readonly>
+      </div>
+      <div class="col s5">
+        <label for="">note</label>
+        <input type="text" name="note2" value="{{form2.note2}}" readonly>
+      </div>
+
+      <div class="col s2">
+        <label for="">เวลา (น.)</label>
+        <input type="text" class="timepicker" name="time3" value="{{form2.time3}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">BP</label>
+        <input type="text" name="BP3" value="{{form2.BP3}}" readonly>
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <p style="color: gray;" class="center-align">/</p>
+      </div>
+      <div class="col s1">
+        <label for="">mmHg</label>
+        <input type="text" name="mmHg3" value="{{form2.mmHg3}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">PR/min</label>
+        <input type="text" name="PR3" value="{{form2.PR3}}" readonly>
+      </div>
+      <div class="col s5">
+        <label for="">note</label>
+        <input type="text" name="note3" value="{{form2.note3}}" readonly>
+      </div>
+
+      <div class="col s2">
+        <label for="">เวลา (น.)</label>
+        <input type="text" class="timepicker" name="time4" value="{{form2.time4}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">BP</label>
+        <input type="text" name="BP4" value="{{form2.BP4}}" readonly>
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <p style="color: gray;" class="center-align">/</p>
+      </div>
+      <div class="col s1">
+        <label for="">mmHg</label>
+        <input type="text" name="mmHg4" value="{{form2.mmHg4}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">PR/min</label>
+        <input type="text" name="PR4" value="{{form2.PR4}}" readonly>
+      </div>
+      <div class="col s5">
+        <label for="">note</label>
+        <input type="text" name="note4" value="{{form2.note4}}" readonly>
+      </div>
+
+      <div class="col s2">
+        <label for="">เวลา (น.)</label>
+        <input type="text" class="timepicker" name="time5" value="{{form2.time5}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">BP</label>
+        <input type="text" name="BP5" value="{{form2.BP5}}" readonly>
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <p style="color: gray;" class="center-align">/</p>
+      </div>
+      <div class="col s1">
+        <label for="">mmHg</label>
+        <input type="text" name="mmHg5" value="{{form2.mmHg5}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">PR/min</label>
+        <input type="text" name="PR5" value="{{form2.PR5}}" readonly>
+      </div>
+      <div class="col s5">
+        <label for="">note</label>
+        <input type="text" name="note5" value="{{form2.note5}}" readonly>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <div class="col s1">
+            <label for="">ทารก:</label>
+          </div>
+          <div class="col s3"></div>
+          <div class="col s2">
+            <label for="">APGAR Score:</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="col s1">
+          <label for="">เพศ</label>
+          <input type="text" name="gender" value="{{form2.gender}}" readonly>
+        </div>
+        <div class="col s1 m2">
+          <label for="">น้ำหนัก (กรัม)</label>
+          <input type="text" name="weight" value="{{form2.weight}}" readonly>
+        </div>
+
+        <div class="col s6">
+          <div class="col s2"></div>
+          <div class="col s3">
+            <label for="">1 นาที</label>
+            <input type="text" name="min1" value="{{form2.min1}}" readonly>
+          </div>
+          <div class="col s3">
+            <label for="">5 นาที</label>
+            <input type="text" name="min5" value="{{form2.min5}}" readonly>
+          </div>
+          <div class="col s3">
+            <label for="">10 นาที</label>
+            <input type="text" name="min10" value="{{form2.min10}}" readonly>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <label for="">OF (ซม.)</label>
+        <input type="text" name="OF" value="{{form2.OF}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">อก (ซม.)</label>
+        <input type="text" name="chest" value="{{form2.chest}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">ยาว (ซม.)</label>
+        <input type="text" name="length" value="{{form2.length}}" readonly>
+      </div>
+      <div class="col s3">
+        <label for="">สภาพทารก</label>
+        <select id="infant" name="infant" disabled>
+          {{#select form2.infant}}
+          <option value="1">ไม่มีสภาวะแทรกซ้อน</option>
+          <option value="2">มีภาวะแทรกซ้อน</option>
+          {{/select}}
+        </select>
+      </div>
+
+      <div class="col s12">
+        <label for="">Remark &amp; Treatment</label>
+        <input type="text" name="remark" value="{{form2.remark}}" readonly>
+      </div>
+
+      <div class="col s3">
+        <label for="">หลังคลอด 2 ชม.</label>
+      </div>
+      <div class="col s1">
+        <label for="">มารดา</label>
+      </div>
+      <div class="col s5"></div>
+      <div class="col s1">
+        <label for="">ทารก</label>
+      </div>
+
+      <div class="row"></div>
+      <div class="col s1"></div>
+      <div class="col s5">
+        <label for="">สภาพทั่วไปก่อนย้าย</label>
+        <input type="text" name="mom_state" value="{{form2.mom_state}}" readonly>
+      </div>
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label for="">สภาพทั่วไปก่อนย้าย</label>
+        <input type="text" name="baby_state" value="{{form2.baby_state}}" readonly>
+      </div>
+      <div class="row"></div>
+      <div class="col s1"></div>
+      <div class="col s2">
+        <label for="">สัญญาณชีพ T (c)</label>
+        <input type="text" name="T_cc" value="{{form2.T_cc}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">PR/min</label>
+        <input type="text" name="PR_min" value="{{form2.PR_min}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">R/min</label>
+        <input type="text" name="R_min" value="{{form2.R_min}}" readonly>
+      </div>
+      <div class="col s1">
+        <label for="">BP/mmHg</label>
+        <input type="text" name="BP_mmHg" value="{{form2.BP_mmHg}}" readonly>
+      </div>
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label for="">อุณหภูมิกาย</label>
+        <input type="text" name="temp" value="{{form2.temp}}" readonly>
+      </div>
+      <div class="row"></div>
+      <div class="col s1"></div>
+      <div class="col s5">
+        <label for="">การหดรัดตัวของมดลูก</label>
+        <input type="text" name="uterus_contract" value="{{form2.uterus_contract}}" readonly>
+      </div>
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label for="">การดูดนม</label>
+        <input type="text" name="baby_milk" value="{{form2.baby_milk}}" readonly>
+      </div>
+      <div class="row"></div>
+      <div class="col s1"></div>
+      <div class="col s5">
+        <label for="">การขับปัสวะ</label>
+        <input type="text" name="urine_out" value="{{form2.urine_out}}" readonly>
+      </div>
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label for="">การขับถ่าย</label>
+        <input type="text" name="excretion" value="{{form2.excretion}}" readonly>
+      </div>
+      <div class="row"></div>
+      <div class="col s1"></div>
+      <div class="col s5">
+        <label for="">การหลั่งของน้ำนม</label>
+        <input type="text" name="breast_milk" value="{{form2.breast_milk}}" readonly>
+      </div>
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label for="">ภาวะผิดปกติอื่นๆ</label>
+        <input type="text" name="baby_abnormalities" value="{{form2.baby_abnormalities}}" readonly>
+      </div>
+      <div class="row"></div>
+      <div class="col s1"></div>
+      <div class="col s5">
+        <label for="">ภาวะผิดปกติอื่นๆ</label>
+        <input type="text" name="mom_abnormalities" value="{{form2.mom_abnormalities}}" readonly>
+      </div>
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label for="">ผู้บันทึก (พยาบาลวิชาชีพ)</label>
+        <input type="text" name="logged_nurse" value="{{form2.logged_nurse}}" readonly>
+      </div>
+
+      <div class="row"></div>
+
+      <div class="col s12">
+        <div class="left">
+          <a class="btn waves-effect waves-light right blue" href="javascript:print('แบบรายงานประวัติ')" name="action">
+            <i class="fa fa-print"></i> Print</a>
+        </div>
+        <div class="right">
+          <a class="btn waves-effect waves-light right red" href="javascript:history.back()" name="action">Back</a>
+        </div>
+      </div>
+
+      <div class="row"></div>
+    </form>
+  </div>
+</div>
+
+{{!-- PRINT FORM2 --}}
+<div class="printContainer print printForm" id="form1">
+  <div class="title">
+    <p>โรงพยาบาลเจ้าพระยาอภัยภูเบศร
+      <br> แบบบันทึกรายงานการคลอด
+    </p>
+  </div>
+  <div class="form2-line1">
+    <p>ชื่อ-สกุล</p>
+    <p class="value">{{form2.patient_name}}</p>
+    <p>อายุ</p>
+    <p class="value">{{form2.patient_age}}</p>
+    <p>ปี</p>
+    <p>HN</p>
+    <p class="value">{{form2.HN}}</p>
+    <p>แพทย์</p>
+    <p class="value">{{form2.doctor}}</p>
+  </div>
+  <div class="form2-line2">
+    <p>G</p>
+    <p class="value">{{form2.G}}</p>
+    <p>P</p>
+    <p class="value">{{form2.P}}</p>
+    <p>A</p>
+    <p class="value">{{form2.A}}</p>
+    <p>L</p>
+    <p class="value">{{form2.L}}</p>
+    <p>Last</p>
+    <p class="value">{{form2.Last}}</p>
+    <p>ปี</p>
+    <p>Preg</p>
+    <p class="value">{{form2.Preg}}</p>
+    <p>wks</p>
+    <p>ภาวะแทรกซ้อน</p>
+    <p class="value">{{form2.Preg_sym}}</p>
+  </div>
+  <div class="form2-line3">
+    <p>Labour :&nbsp;
+      <input type="checkbox" name="spontaneous" id="spontaneous" {{setChecked '1' form2.Labour}}>
+      <label for="spontaneous">Spontaneous</label>&nbsp;
+      <input type="checkbox" name="induction" id="induction" {{setChecked '2' form2.Labour}}>
+      <label for="induction">Induction Method</label>&nbsp;
+    </p>
+    <p class="value">{{form2.Labour_field}}</p>
+  </div>
+  <div class="form2-line4">
+    <p>เจ็บครรภ์จริง</p>
+    <p class="value">{{form2.Labour_hurt}}</p>
+    <p>น.</p>
+    <p></p>
+    <p>ระยะที่ 1 ของการคลอด</p>
+    <p class="value">{{form2.phase1_hour}}</p>
+    <p>ชม</p>
+    <p class="value">{{form2.phase1_min}}</p>
+    <p>นาที</p>
+  </div>
+  <div class="form2-line5">
+    <p>ปากมดลูกเปิดหมด</p>
+    <p class="value">{{form2.uterus}}</p>
+    <p>น.</p>
+    <p></p>
+    <p>ระยะที่ 1 ของการคลอด</p>
+    <p class="value">{{form2.phase2_hour}}</p>
+    <p>ชม</p>
+    <p class="value">{{form2.phase2_min}}</p>
+    <p>นาที</p>
+  </div>
+  <div class="form2-line6">
+    <p>ทารกคลอดวันที่</p>
+    <p class="value">{{form2.bornDate}}</p>
+    <p>เวลา</p>
+    <p class="value">{{form2.bornTime}}</p>
+    <p>น.</p>
+    <p></p>
+    <p>ระยะที่ 1 ของการคลอด</p>
+    <p class="value">{{form2.phase3_hour}}</p>
+    <p>ชม</p>
+    <p class="value">{{form2.phase3_min}}</p>
+    <p>นาที</p>
+  </div>
+  <div class="form2-line7">
+    <p>รกคลอดเวลา</p>
+    <p class="value">{{form2.placenta}}</p>
+    <p>น.</p>
+  </div>
+  <div class="form2-line8">
+    <p>Type of MR :&nbsp;
+      <input type="checkbox" name="spontaneous" id="spontaneous" {{setChecked '1' form2.MR}}>
+      <label for="spontaneous">Spontaneous</label>&nbsp;
+      <input type="checkbox" name="arm" id="arm" {{setChecked '2' form2.MR}}>
+      <label for="arm">ARM</label>&nbsp;
+    </p>
+    <p>วันที่</p>
+    <p class="value">{{form2.MR_date}}</p>
+    <p>เวลา</p>
+    <p class="value">{{form2.MR_time}}</p>
+    <p>น.</p>
+    <p>ลักษณะ</p>
+    <p class="value">{{form2.appearance}}</p>
+  </div>
+  <div class="form2-line9">
+    <p>Medication (Time &amp; does)</p>
+    <p class="value">{{form2.med_time_does}}</p>
+  </div>
+  <div class="form2-line10">
+    <p>Delivery :&nbsp;
+      <input type="checkbox" name="normal" id="normal" {{setChecked '1' form2.Delivery}}>
+      <label for="spontaneous">Normal</label>&nbsp;
+      <input type="checkbox" name="abnormal" id="abnormal" {{setChecked '2' form2.Delivery}}>
+      <label for="arm">Abnormal</label>&nbsp;
+    </p>
+    <p class="value">{{form2.delivery_field}}</p>
+    <p>Indication</p>
+    <p class="value">{{form2.Indication}}</p>
+  </div>
+  <div class="form2-line11">
+    <p></p>
+    <p>ผู้ทำคลอด</p>
+    <p class="value">{{form2.birth_delivery}}</p>
+    <p>แพทย์/พยาบาล</p>
+  </div>
+  <div class="form2-line12">
+    <p>
+      Injuries : Type of Episiotomy :&nbsp;
+    </p>
+    <p>
+      <input type="checkbox" name="median" id="median" {{setChecked '1' form2.Episiotomy}}>
+      <label for="median">Median</label>&nbsp;
+      <input type="checkbox" name="rml" id="rml" {{setChecked '2' form2.Episiotomy}}>
+      <label for="rml">RML</label>&nbsp;
+      <input type="checkbox" name="lml" id="lml" {{setChecked '3' form2.Episiotomy}}>
+      <label for="lml">LML</label>&nbsp;
+    </p>
+  </div>
+  <div class="form2-line13">
+    <p></p>
+    <p>
+      Lacerated : Perineum&nbsp;
+    </p>
+    <p>
+      <input type="checkbox" name="noTear" id="noTear" {{setChecked '1' form2.Perineum}}>
+      <label for="noTear">No Tear</label>&nbsp;
+      <input type="checkbox" name="tear1" id="tear1" {{setChecked '2' form2.Perineum}}>
+      <label for="tear1">1</label>&nbsp;
+      <input type="checkbox" name="tear2" id="tear2" {{setChecked '3' form2.Perineum}}>
+      <label for="tear2">2</label>&nbsp;
+      <input type="checkbox" name="tear3" id="tear3" {{setChecked '4' form2.Perineum}}>
+      <label for="tear3">3</label>&nbsp;
+      <input type="checkbox" name="return" id="return" {{setChecked '5' form2.Perineum}}>
+      <label for="return">Return</label>&nbsp;
+      <input type="checkbox" name="cervix" id="cervix" {{setChecked '6' form2.Perineum}}>
+      <label for="cervix">Cervix</label>&nbsp;
+    </p>
+  </div>
+  <div class="form2-line14" style="margin-bottom: 15px;">
+    <p></p>
+    <p>
+      Method of Suture :&nbsp;
+    </p>
+    <p>
+      <input type="checkbox" name="Subcutaneous" id="Subcutaneous" {{setChecked '1' form2.Suture}}>
+      <label for="Subcutaneous">Subcutaneous with chromic cutgut</label>&nbsp;
+      <input type="checkbox" name="surture_Other" id="surture_Other" {{setChecked '2' form2.Suture}}>
+      <label for="surture_Other">Others</label>&nbsp;
+    </p>
+  </div>
+  <div class="form2-line15" style="margin-bottom: 15px;">
+    <p>
+      รกและสายสะดือ :&nbsp;
+      <input type="checkbox" name="spontaneous_delivery" id="spontaneous_delivery" {{setChecked '1' form2.placenta_cord}}>
+      <label for="spontaneous_delivery">Spontaneous Delivery</label>&nbsp;
+      <input type="checkbox" name="manual" id="manual" {{setChecked '2' form2.placenta_cord}}>
+      <label for="manual">Manual Removal</label>&nbsp;
+    </p>
+    <p>น้ำหนักรก</p>
+    <p class="value">{{form2.placenta_w}}</p>
+    <p>กรัม</p>
+    <p>สายสะดือยาว</p>
+    <p class="value">{{form2.cord_length}}</p>
+    <p>ซม.</p>
+  </div>
+  <div class="form2-line16">
+    <p>
+      ลักษณะรก :&nbsp;
+      <input type="checkbox" name="placenta_normal" id="placenta_normal" {{setChecked '1' form2.placenta_app}}>
+      <label for="placenta_normal">ปกติ</label>&nbsp;
+      <input type="checkbox" name="placenta_abnormal" id="placenta_abnormal" {{setChecked '2' form2.placenta_app}}>
+      <label for="placenta_abnormal">ผิดปกติ</label>&nbsp;
+    </p>
+    <p class="value">{{form2.placenta_app_field}}</p>
+    <p>
+      <input type="checkbox" name="placenta_complete" id="placenta_complete" {{setChecked '1' form2.placenta_all}}>
+      <label for="placenta_complete">ครบ</label>&nbsp;
+      <input type="checkbox" name="placenta_incomplete" id="placenta_incomplete" {{setChecked '2' form2.placenta_all}}>
+      <label for="placenta_incomplete">ไม่ครบ</label>&nbsp;
+    </p>
+  </div>
+  <div class="form2-line17" style="margin-bottom: 15px;">
+    <p>ลักษณะผิดปกติ (ระบุ)</p>
+    <p class="value">{{form2.abnormalcord_text}}</p>
+  </div>
+  <div class="form2-line18">
+    <p>
+      POSTPARTUM CONDITION :&nbsp;
+      <input type="checkbox" name="postpartum_normal" id="postpartum_normal" {{setChecked '1' form2.POSTPARTUM}}>
+      <label for="postpartum_normal">Normal</label>&nbsp;
+      <input type="checkbox" name="postpartum_abnormal" id="postpartum_abnormal" {{setChecked '2' form2.POSTPARTUM}}>
+      <label for="postpartum_abnormal">Abnormal</label>&nbsp;
+    </p>
+    <p>Total blood loss</p>
+    <p class="value">{{form2.blood_loss}}</p>
+    <p>c.c.</p>
+    <p>BP</p>
+    <p class="value">{{form2.BP}}</p>
+    <p>/</p>
+    <p class="value">{{form2.mmHg}}</p>
+    <p>mmHg</p>
+  </div>
+  <div class="form2-line19" style="margin-bottom: 15px;">
+    <p>Medication (Time &amp; does)</p>
+    <p class="value">{{form2.med_time_does2}}</p>
+  </div>
+  <div class="form2-line20">
+    <p>เวลา</p>
+    <p class="value">{{form2.time1}}</p>
+    <p>น.</p>
+    <p>BP</p>
+    <p class="value">{{form2.BP1}}</p>
+    <p>/</p>
+    <p class="value">{{form2.mmHg1}}</p>
+    <p>mmHg</p>
+    <p>PR</p>
+    <p class="value">{{form2.PR1}}</p>
+    <p>/min</p>
+    <p>note</p>
+    <p class="value">{{form2.note1}}</p>
+  </div>
+  <div class="form2-line20">
+    <p>เวลา</p>
+    <p class="value">{{form2.time2}}</p>
+    <p>น.</p>
+    <p>BP</p>
+    <p class="value">{{form2.BP2}}</p>
+    <p>/</p>
+    <p class="value">{{form2.mmHg2}}</p>
+    <p>mmHg</p>
+    <p>PR</p>
+    <p class="value">{{form2.PR2}}</p>
+    <p>/min</p>
+    <p>note</p>
+    <p class="value">{{form2.note2}}</p>
+  </div>
+  <div class="form2-line20">
+    <p>เวลา</p>
+    <p class="value">{{form2.time3}}</p>
+    <p>น.</p>
+    <p>BP</p>
+    <p class="value">{{form2.BP3}}</p>
+    <p>/</p>
+    <p class="value">{{form2.mmHg3}}</p>
+    <p>mmHg</p>
+    <p>PR</p>
+    <p class="value">{{form2.PR3}}</p>
+    <p>/min</p>
+    <p>note</p>
+    <p class="value">{{form2.note3}}</p>
+  </div>
+  <div class="form2-line20">
+    <p>เวลา</p>
+    <p class="value">{{form2.time4}}</p>
+    <p>น.</p>
+    <p>BP</p>
+    <p class="value">{{form2.BP4}}</p>
+    <p>/</p>
+    <p class="value">{{form2.mmHg4}}</p>
+    <p>mmHg</p>
+    <p>PR</p>
+    <p class="value">{{form2.PR4}}</p>
+    <p>/min</p>
+    <p>note</p>
+    <p class="value">{{form2.note4}}</p>
+  </div>
+  <div class="form2-line20" style="margin-bottom: 15px;">
+    <p>เวลา</p>
+    <p class="value">{{form2.time5}}</p>
+    <p>น.</p>
+    <p>BP</p>
+    <p class="value">{{form2.BP5}}</p>
+    <p>/</p>
+    <p class="value">{{form2.mmHg5}}</p>
+    <p>mmHg</p>
+    <p>PR</p>
+    <p class="value">{{form2.PR5}}</p>
+    <p>/min</p>
+    <p>note</p>
+    <p class="value">{{form2.note5}}</p>
+  </div>
+  <div class="form2-line21" style="margin-bottom: 15px;">
+    <p>ทารก :</p>
+    <p>เพศ</p>
+    <p class="value">{{form2.gender}}</p>
+    <p>น้ำหนัก</p>
+    <p class="value">{{form2.weight}}</p>
+    <p>กรัม</p>
+    <p>APGAR Score : </p>
+    <p>1 นาที</p>
+    <p class="value">{{form2.min1}}</p>
+    <p>5 นาที</p>
+    <p class="value">{{form2.min5}}</p>
+    <p>10 นาที</p>
+    <p class="value">{{form2.min10}}</p>
+  </div>
+  <div class="form2-line22">
+    <p>OF</p>
+    <p class="value">{{form2.OF}}</p>
+    <p>ซม.</p>
+    <p>อก</p>
+    <p class="value">{{form2.chest}}</p>
+    <p>ซม.</p>
+    <p>ยาว</p>
+    <p class="value">{{form2.length}}</p>
+    <p>ซม.</p>
+    <p>
+      สภาพทารก :&nbsp;
+      <input type="checkbox" name="child_normal" id="child_normal" {{setChecked '1' form2.infant}}>
+      <label for="child_normal">ไม่มีภาวะแทรกซ้อน</label>&nbsp;
+      <input type="checkbox" name="child_abnormal" id="child_abnormal" {{setChecked '2' form2.infant}}>
+      <label for="child_abnormal">มีภาวะแทรกซ้อน</label>&nbsp;
+    </p>
+  </div>
+  <div class="form2-line23" style="margin-bottom:15px;">
+    <p>Remark &amp; Treatment</p>
+    <p class="value">{{form2.remark}}</p>
+  </div>
+  <div class="form2-line24">
+    <p>หลังคลอด 2 ชม.</p>
+    <p></p>
+    <p>มารดา</p>
+    <p></p>
+    <p>ทารก</p>
+  </div>
+  <div class="form2-line25">
+    <p>สภาพทั่วไปก่อนย้าย</p>
+    <p class="value">{{form2.mom_state}}</p>
+    <p></p>
+    <p>สภาพทั่วไปก่อนย้าย</p>
+    <p class="value">{{form2.baby_state}}</p>
+  </div>
+  <div class="form2-line26">
+    <p>สัญญานชีพT</p>
+    <p class="value">{{form2.T_cc}}</p>
+    <p>c</p>
+    <p>PR</p>
+    <p class="value">{{form2.PR_min}}</p>
+    <p>/min</p>
+    <p>R</p>
+    <p class="value">{{form2.R_min}}</p>
+    <p>/min</p>
+    <p>BP</p>
+    <p class="value">{{form2.BP_mmHg}}</p>
+    <p>mmHg</p>
+    <p>อุณหภูมิกาย</p>
+    <p class="value">{{form2.temp}}</p>
+  </div>
+  <div class="form2-line27">
+    <p>การหดรัดตัวของมดลูก</p>
+    <p class="value">{{form2.uterus_contract}}</p>
+    <p></p>
+    <p>การดูดนม</p>
+    <p class="value">{{form2.baby_milk}}</p>
+  </div>
+  <div class="form2-line28">
+    <p>การขับปัสสาวะ</p>
+    <p class="value">{{form2.urine_out}}</p>
+    <p></p>
+    <p>การขับถ่าย</p>
+    <p class="value">{{form2.excretion}}</p>
+  </div>
+  <div class="form2-line29">
+    <p>การหลั่งของน้ำนม</p>
+    <p class="value">{{form2.breast_milk}}</p>
+    <p></p>
+    <p>ภาวะผิดปกติอื่นๆ</p>
+    <p class="value">{{form2.baby_abnormalities}}</p>
+  </div>
+  <div class="form2-line30">
+    <p>ภาวะผิดปกติอื่นๆ</p>
+    <p class="value">{{form2.mom_abnormalities}}</p>
+    <p></p>
+    <p>ผู้บันทึก</p>
+    <p class="value">{{form2.logged_nurse}}</p>
+    <p>/พยาบาลวิชาชีพ</p>
+  </div>
+</div>

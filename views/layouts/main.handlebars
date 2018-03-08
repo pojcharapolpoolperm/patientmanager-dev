@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" media="screen">
+  <link rel="stylesheet" href="/css/style.css" media="screen">
+  <link rel="stylesheet" href="/css/printStyle.css" media="print">
+  <style type="text/css" media="print">
+    .no-print {
+      display: none;
+    }
+    .printForm{
+      display: block;
+    }
+  </style>
+  <style type="text/css" media="screen">
+    .print {
+      display: none;
+    }
+  </style>
+
+
+  <title>Patient Manager</title>
+</head>
+
+<body>
+  {{#if user}} {{> _navbar}} {{/if}}
+  <div class="{{#unless user}} login-container {{/unless}}">
+    <div class="container">
+      {{> _msg}} {{> _errors}} {{{body}}} {{#if user}} {{> _addbtn}} {{/if}}
+    </div>
+  </div>
+
+  {{!--
+  <a title="print" alt="print" onclick="window.print();" style="cursor:pointer;">print button</a> --}}
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+  <script src="/js/init.js"></script> {{#if init4}}
+  <script src="/js/form4_init.js"></script> {{/if}}
+</body>
+
+</html>

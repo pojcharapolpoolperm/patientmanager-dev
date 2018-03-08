@@ -1,0 +1,488 @@
+{{!-- ใบประเมินแรกรับ --}}
+
+<br>
+<div class="row z-depth-3">
+  <form action="/patient/form4/save/{{patient.id}}" method="post">
+    <div class="col s12">
+
+      {{!-- Form --}}
+
+      <div class="row"></div>
+      <div class="col s12 center">
+        <span style="font-size: 125%; font-weight: bold;">ใบประเมินแรกรับ
+        </span>
+      </div>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="col s12 left">
+        <span class="left" style="font-weight: 600; margin-right:20px; ">1. การแจ้งรับผู้ป่วยจาก
+        </span>
+        <div class="col s1">
+          <input type="radio" name="reportFrom" id="OPD" value="OPD" />
+          <label for="OPD">OPD</label>
+        </div>
+        <div class="col s1">
+          <input type="radio" name="reportFrom" id="ER" value="ER" />
+          <label for="ER">ER</label>
+        </div>
+        <div class="col s1">
+          <input type="radio" name="reportFrom" id="Ward" value="Ward" />
+          <label for="Ward">Ward</label>
+        </div>
+      </div>
+      <div class="col s2" id="wardInput" style="margin-top: 20px;">
+        <label>Ward</label>
+        <input type="text" name="wardInput" placeholder="Ward" value="{{patient.ward}}">
+      </div>
+
+      <div class="row"></div>
+
+      {{!-- 1.การแจ้งรับผู้ป่วยจาก OPD ER WARD --}}
+
+      <div class="col s4">
+        <label>ชื่อ-สกุลผู้ป่วย</label>
+        <input type="text" name="name" id="name" placeholder="ชื่อ-สกุล" value="{{patient.name}}">
+      </div>
+      <div class="col s2">
+        <label>อายุ (ปี)</label>
+        <input type="number" name="age" id="age" placeholder="อายุ (ปี)" value="{{patient.age}}">
+      </div>
+      <div class="col s2">
+        <label>HN</label>
+        <input type="text" name="HN" id="HN" placeholder="HN" value="{{patient.HN}}">
+      </div>
+      <div class="row"></div>
+      <div class="col s12">
+        <label>การวินิฉัยโรค</label>
+        <input type="text" name="analysis" placeholder="การวินิฉัยโรค">
+      </div>
+
+      <div class="col s12" style="margin-bottom: 10px;">
+        <label for="">การเดรียมรับ</label>
+        <p>
+          <div class="col s2">
+            <input type="radio" id="type1" name="roomType" value="type1" />
+            <label for="type1">สามัญ</label>
+          </div>
+          <div class="col s2">
+            <input type="radio" id="type2" name="roomType" value="type2" />
+            <label for="type2">พิเศษรวม</label>
+          </div>
+          <div class="col s2">
+            <input type="radio" id="type3" name="roomType" value="type3" />
+            <label for="type3">ห้องแยก</label>
+          </div>
+
+          <div class="col s2">
+            <input type="radio" id="type4" name="roomType" value="type4" />
+            <label for="type4">หอผู้ป่วยวิกฤต</label>
+          </div>
+        </p>
+      </div>
+
+      <div class="col s8" style="margin-bottom: 10px;">
+        <label for="">อุปกรณ์</label>
+        <p>
+          <div class="col s3">
+            <input type="checkbox" class="filled-in" id="equip1" name="equip1" />
+            <label for="equip1">O2 Camlar</label>
+          </div>
+          <div class="col s3">
+            <input type="checkbox" class="filled-in" id="equip2" name="equip2" />
+            <label for="equip2">O2 Mask</label>
+          </div>
+          <div class="col s3">
+            <input type="checkbox" class="filled-in" id="equip3" name="equip3" />
+            <label for="equip3">Respiratory</label>
+          </div>
+          <div class="col s3">
+            <input type="checkbox" class="filled-in" id="equip4" name="equip4" />
+            <label for="equip4">อื่นๆ</label>
+          </div>
+        </p>
+      </div>
+      <div class="col s4" id="equipmentOther">
+        <label>.</label>
+        <input type="text" name="equipmentOther" placeholder="อื่นๆ">
+      </div>
+
+      <div class="row"></div>
+      <div class="col s3">
+        <label>ผู้แจ้ง</label>
+        <input type="text" name="reporter" placeholder="ผู้แจ้ง">
+      </div>
+      <div class="col s3">
+        <label>วันที่</label>
+        <input type="text" name="reportDate" class="datepicker" placeholder="วันที่">
+      </div>
+      <div class="col s2">
+        <label>เวลา</label>
+        <input type="text" name="reportTime" class="timepicker" placeholder="เวลา (น.)">
+      </div>
+      <div class="col s3">
+        <label>ผู้รับแจ้ง</label>
+        <input type="text" name="reported" placeholder="ผู้รับแจ้ง">
+      </div>
+
+      <div class="col s12" style="margin-bottom: 10px;">
+        <label for="">ตรวจสอบเอกสาร</label>
+        <p>
+          <div class="col s2">
+            <input type="checkbox" class="filled-in" id="checkDoc1" name="checkDoc1" />
+            <label for="checkDoc1">ใบ Summary</label>
+          </div>
+          <div class="col s2">
+            <input type="checkbox" class="filled-in" id="checkDoc2" name="checkDoc2" />
+            <label for="checkDoc2">ใบตรวจสอบสิทธิ์</label>
+          </div>
+          <div class="col s2">
+            <input type="checkbox" class="filled-in" id="checkDoc3" name="checkDoc3" />
+            <label for="checkDoc3">ใบ OPD Card</label>
+          </div>
+
+          <div class="col s2">
+            <input type="checkbox" class="filled-in" id="checkDoc4" name="checkDoc4" />
+            <label for="checkDoc4">ใบยินยอมรักษา</label>
+          </div>
+          <div class="col s2">
+            <input type="checkbox" class="filled-in" id="checkDoc5" name="checkDoc5" />
+            <label for="checkDoc5">อื่นๆ...</label>
+          </div>
+          <div class="col s2">
+            <label >อื่นๆ</label>
+            <input type="text" class="filled-in" id="checkDocOther" name="checkDocOther" />
+          </div>
+        </p>
+      </div>
+      <div class="row"></div>
+      <div class="col s2">
+        <label for="">ของที่ผู้ป่วยนำมา</label>
+        <p id="bringRadio">
+          <div class="col s6">
+            <input type="radio" class="filled-in" id="dontBring" name="bring" value="dontBring" />
+            <label for="dontBring">ไม่มี</label>
+          </div>
+          <div class="col s6">
+            <input type="radio" class="filled-in" id="bring" name="bring" value="bring" />
+            <label for="bring">มี</label>
+          </div>
+        </p>
+      </div>
+      <div class="col s4" id="bringOther">
+        <label>ระบุ</label>
+        <input type="text" name="bringOther">
+      </div>
+      <div class="col s4 right">
+        <label>ผู้ตรวจสอบ</label>
+        <input type="text" name="examiner" placeholder="ผู้ตรวจสอบ">
+      </div>
+      <div class="row"></div>
+    </div>
+
+    <div class="col s12 divider grey"></div>
+
+    <div class="col s12">
+      <div class="row"></div>
+      <div class="col s12 left">
+        <span style="font-weight: 600;">2. ประวัติการเจ็บป่วยปัจจุบัน
+        </span>
+      </div>
+      <div class="row"></div>
+
+      {{!-- 2.ประวัติการเจ็บป่วยปัจจุบัน --}}
+
+      <div class="col s3">
+        <label>เข้ารับการรักษาวันที่</label>
+        <input type="text" name="checkInDate" class="datepicker" placeholder="วันที่">
+      </div>
+      <div class="col s2">
+        <label>เวลา</label>
+        <input type="text" name="checkInTime" class="timepicker" placeholder="เวลา (น.)">
+      </div>
+
+      <div class="col s2">
+        <label for="">ถึงหอผู้ป่วยโดย</label>
+        <select id="transport" name="transport">
+          <option value='เดิน'>เดิน</option>
+          <option value='รถนั่ง'>รถนั่ง</option>
+          <option value='รถนอน'>รถนอน</option>
+          <option value='อื่นๆ'>อื่นๆ</option>
+        </select>
+      </div>
+      <div class="col s3" id="transportOther">
+        <label>อื่นๆ</label>
+        <input type="text" name="transportOther">
+      </div>
+
+      <div class="row"></div>
+      <div class="col s12">
+        <label>อาการสำคัญที่มาโรงพยาบาล</label>
+        <input type="text" name="symptom" placeholder="อาการสำคัญที่มาโรงพยาบาล">
+      </div>
+
+      <div class="col s12">
+        <label>ประวัติการเจ็บป่วยปัจจุบัน</label>
+      </div>
+      <div class="col s12">
+        <div class="col s1">
+          <label>G</label>
+          <input type="text" name="G" placeholder="G" value="{{patient.G}}">
+        </div>
+        <div class="col s1">
+          <label>P</label>
+          <input type="text" name="P" placeholder="P" value="{{patient.P}}">
+        </div>
+        <div class="col s1">
+          <label>A</label>
+          <input type="text" name="A" placeholder="A" value="{{patient.A}}">
+        </div>
+        <div class="col s1">
+          <label>L</label>
+          <input type="text" name="L" placeholder="L" value="{{patient.L}}">
+        </div>
+        <div class="col s2">
+          <label>GA (wks)</label>
+          <input type="text" name="GA" placeholder="GA (wks)" value="{{patient.GA}}">
+        </div>
+        <div class="col s6">
+          <label>ANC ที่</label>
+          <input type="text" name="ANC" placeholder="ANC ที่">
+        </div>
+      </div>
+
+      <div class="col s12">
+        <label>การแก้ไขก่อนมารพ</label>
+        <input type="text" name="beforeArrive" placeholder="การแก้ไขก่อนมารพ">
+      </div>
+
+      <div class="col s1">
+        <label>Vital Sign</label>
+      </div>
+      <div class="col s2">
+        <label>Temp (c)</label>
+        <input type="text" name="Temp" placeholder="Temp (c)">
+      </div>
+      <div class="col s2">
+        <label>Pulse</label>
+        <input type="text" name="Pulse" placeholder="pulse">
+      </div>
+      <div class="col s2">
+        <label>Resp /min</label>
+        <input type="text" name="Resp" placeholder="Resp /min">
+      </div>
+      <div class="col s2">
+        <label>BP (mmHg)</label>
+        <input type="text" name="BP" placeholder="BP (mmHg)">
+      </div>
+      <div class="col s2">
+        <label>02 Sat %</label>
+        <input type="text" name="O2Sat" placeholder="O2 Sat %">
+      </div>
+      <div class="col s12">
+        <label>อื่นๆ</label>
+        <input type="text" name="vitalOther" placeholder="อื่นๆ">
+      </div>
+    </div>
+    <div class="row"></div>
+
+    <div class="col s12 divider grey"></div>
+
+    <div class="col s12">
+      <div class="row"></div>
+      <div class="col s12 left">
+        <span class="left" style="font-weight: 600; margin-right:20px;">3. ประวัติการเจ็บป่วยในอดีต
+        </span>
+        <div class="col s3">
+          <input type="checkbox" class="filled-in" name="cannotTell3" id="cannotTell3">
+          <label for="cannotTell3">ประเมินไม่ได้</label>
+        </div>
+      </div>
+      <div class="row"></div>
+    </div>
+
+    {{!-- 3.ประวัติการเจ็บป่วยในอดีต ประเมินไม่ได้ --}}
+    <div class="col s12" id="Question3">
+      <div class="col s2">
+        <label for="">โรคทางพันธุกรรม</label>
+        <p>
+          <div class="col s6">
+            <input type="radio" class="filled-in" id="geneticsNo" name="genetics" value="geneticsNo" />
+            <label for="geneticsNo">ไม่มี</label>
+          </div>
+          <div class="col s6">
+            <input type="radio" class="filled-in" id="genetics" name="genetics" value="genetics" />
+            <label for="genetics">มี</label>
+          </div>
+        </p>
+      </div>
+      <div class="col s4" id="geneticsOther">
+        <label>.</label>
+        <input type="text" name="geneticsOther" placeholder="ระบุ">
+      </div>
+
+      <div class="col s2">
+        <label for="">โรคประจำตัว</label>
+        <p>
+          <div class="col s6">
+            <input type="radio" class="filled-in" id="anyMedicationNo" name="anyMedication" value="anyMedicationNo" />
+            <label for="anyMedicationNo">ไม่มี</label>
+          </div>
+          <div class="col s6">
+            <input type="radio" class="filled-in" id="anyMedication" name="anyMedication" value="anyMedication" />
+            <label for="anyMedication">มี</label>
+          </div>
+        </p>
+      </div>
+      <div class="col s4" id="anyMedicationOther">
+        <label>.</label>
+        <input type="text" name="anyMedicationOther" placeholder="ระบุ">
+      </div>
+    <div class="row"></div>
+      <div class="col s2">
+        <label for="">ประวัติการแพ้ยา/อาหาร</label>
+        <p>
+          <div class="col s6">
+            <input type="radio" class="filled-in" id="medicalProblemsNo" name="medicalProblems" value="medicalProblemsNo" />
+            <label for="medicalProblemsNo">ไม่มี</label>
+          </div>
+          <div class="col s6">
+            <input type="radio" class="filled-in" id="medicalProblems" name="medicalProblems" value="medicalProblems" />
+            <label for="medicalProblems">มี</label>
+          </div>
+        </p>
+      </div>
+      <div class="col s4" id="medicalProblemsOther">
+        <label>.</label>
+        <input type="text" name="medicalProblemsOther" placeholder="ระบุ">
+      </div>
+
+      <div class="col s2">
+        <label for="">ประวัติการผ่าตัด</label>
+        <p>
+          <div class="col s6">
+            <input type="radio" class="filled-in" id="surgicalHistoryNo" name="surgicalHistory" value="surgicalHistoryNo" />
+            <label for="surgicalHistoryNo">ไม่มี</label>
+          </div>
+          <div class="col s6">
+            <input type="radio" class="filled-in" id="surgicalHistory" name="surgicalHistory" value="surgicalHistory" />
+            <label for="surgicalHistory">มี</label>
+          </div>
+        </p>
+      </div>
+      <div class="col s4" id="surgicalHistoryOther">
+        <label>.</label>
+        <input type="text" name="surgicalHistoryOther" placeholder="ระบุ" >
+      </div>
+
+      <div class="row"></div>
+
+      <div class="col s2">
+        <label for="">ประวัติการใช้ยา</label>
+        <p>
+          <div class="col s6">
+            <input type="radio" class="filled-in" id="medicationHistoryNo" name="medicationHistory" value="medicationHistoryNo" />
+            <label for="medicationHistoryNo">ไม่มี</label>
+          </div>
+          <div class="col s6">
+            <input type="radio" class="filled-in" id="medicationHistory" name="medicationHistory" value="medicationHistory" />
+            <label for="medicationHistory">มี</label>
+          </div>
+        </p>
+
+      </div>
+      <div class="col s10" id="medicationHistoryOther">
+        <label>.</label>
+        <input type="text" name="medicationHistoryOther" placeholder="ระบุ">
+      </div>
+      <div class="row"></div>
+    </div>
+
+    <div class="col s12 divider grey"></div>
+
+    <div class="col s12">
+      <div class="row"></div>
+      <div class="col s12 left">
+        <span style="font-weight: 600;">4. ประวัตส่วนตัว/ครอบครัว
+        </span>
+      </div>
+      <div class="row"></div>
+
+      {{!-- 4.ประวัตส่วนตัว/ครอบครัว --}}
+
+      <div class="col s4">
+        <label>บทบาทของผู้ป่วยในครอบครัว</label>
+        <input type="text" name="roleInFamily" placeholder="บทบาทของผู้ป่วยในครอบครัว">
+      </div>
+      <div class="col s2">
+        <label>ระดับการศึกษา</label>
+        <input type="text" name="educationLevel" placeholder="ระดับการศึกษา">
+      </div>
+      <div class="col s2">
+        <label>สถานภาพสมรส</label>
+        <input type="text" name="relationshipStatus" placeholder="สถานภาพสมรส">
+      </div>
+      <div class="col s2">
+        <label>อาชีพ</label>
+        <input type="text" name="job" placeholder="อาชีพ" value="{{patient.job}}">
+      </div>
+      <div class="col s2">
+        <label>ศาสนา</label>
+        <input type="text" name="religion" placeholder="ศาสนา">
+      </div>
+
+      <div class="col s3">
+        <label>บุคคลที่ติดต่อได้</label>
+        <input type="text" name="secondaryContact" placeholder="บุคคลที่ติดต่อได้">
+      </div>
+      <div class="col s2">
+        <label>เกี่ยวข้องเป็น</label>
+        <input type="text" name="secondaryContactRelation" placeholder="เกี่ยวข้องเป็น">
+      </div>
+      <div class="col s2">
+        <label>โทร</label>
+        <input type="text" name="tel" placeholder="โทร">
+      </div>
+      <div class="col s5">
+        <label>สถานที่ติดต่อ</label>
+        <input type="text" name="contactPlace" placeholder="สถานที่ติดต่อ">
+      </div>
+      <div class="row"></div>
+    </div>
+
+    <div class="col s12 divider grey"></div>
+
+    <div class="row"></div>
+
+    <div class="col s12">
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label>Name of Patient</label>
+        <input type="text" name="name" placeholder="Name of Patient" value="{{patient.name}}">
+      </div>
+      <div class="col s2">
+        <label>Age</label>
+        <input type="text" name="age" placeholder="Age (ปี)" value="{{patient.age}}">
+      </div>
+      <div class="col s2">
+        <label>H.N.</label>
+        <input type="text" name="HN" placeholder="H.N." value="{{patient.HN}}">
+      </div>
+      <div class="col s2">
+        <label>Ward</label>
+        <input type="text" name="wardInput" placeholder="Ward" value="{{patient.ward}}">
+      </div>
+
+      <div class="row"></div>
+
+      <div class="col s10"></div>
+      <div class="col s2">
+        <button class="btn waves-effect waves-light right" type="submit" name="action">Save</button>
+      </div>
+    </div>
+
+    <div class="row"></div>
+
+
+  </form>
+  <!-- End Form -->
+</div>

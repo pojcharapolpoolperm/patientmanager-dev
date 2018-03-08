@@ -1,0 +1,622 @@
+<br>
+<div class="row z-depth-3">
+  <div class="col s12">
+    <form action="/patient/form2/save/{{patient.id}}" method="post">
+
+      <div class="row"></div>
+      <div class="col s12 center">
+        <span style="font-size: 125%; font-weight: bold;">แบบบันทึกรายงานการคลอด</span>
+      </div>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="col s4">
+        <label for="">ชื่อ-สกุล</label>
+        <input type="text" name="patient_name" placeholder="ชื่อ-สกุล" value="{{patient.name}}" >
+      </div>
+      <div class="col s2">
+        <label for="">อายุ (ปี)</label>
+        <input type="number" name="patient_age" placeholder="อายุ (ปี)" value="{{patient.age}}" >
+      </div>
+      <div class="col s2">
+        <label for="">HN</label>
+        <input type="text" name="HN" placeholder="HN" value="{{patient.HN}}">
+      </div>
+      <div class="col s4">
+        <label for="">แพทย์</label>
+        <input type="text" name="doctor" placeholder="แพทย์" >
+      </div>
+
+      <div class="row"></div>
+
+      <div class="col s1">
+        <label for="">G</label>
+        <input type="text" name="G" placeholder="G" value="{{patient.G}}" >
+      </div>
+      <div class="col s1">
+        <label for="">P</label>
+        <input type="text" name="P" placeholder="P" value="{{patient.P}}" >
+      </div>
+      <div class="col s1">
+        <label for="">A</label>
+        <input type="text" name="A" placeholder="A" value="{{patient.A}}" >
+      </div>
+      <div class="col s1">
+        <label for="">L</label>
+        <input type="text" name="L" placeholder="L" value="{{patient.L}}" >
+      </div>
+      <div class="col s1">
+        <label for="">Last (ปี)</label>
+        <input type="text" name="Last" placeholder="Last (ปี)">
+      </div>
+      <div class="col s2">
+        <label for="">Preg (wks)</label>
+        <input type="text" name="Preg" placeholder="Preg (wks)">
+      </div>
+      <div class="col s5">
+        <label for="">ภาวะแทรกซ้อน</label>
+        <input type="text" name="Preg_sym" placeholder="ภาวะแทรกซ้อน">
+      </div>
+
+      <div class="col s3">
+        <label for="">Labour</label>
+        <select id="Labour" name="Labour">
+          <option value="0">Labour</option>
+          <option value="1">Spontaneous</option>
+          <option value="2">Induction Method</option>
+        </select>
+      </div>
+      <div class="col s9" id="induction_field">
+        <label for="">Method</label>
+        <input type="text" name="Labour_field" placeholder="">
+      </div>
+      <div class="row"></div>
+      <div class="col s12">
+        <div class="col s4">
+          <label for="">เจ็บครรภ์จริง (น.)</label>
+          <input type="text" class="timepicker" name="Labour_hurt">
+        </div>
+        <div class="col s2 l3"></div>
+        <div class="col s3 l2">
+          <label for="">ระยะที่ 1 ของการคลอด</label>
+          <input type="text" name="phase1_hour">
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <p style="color: gray;">ชม</p>
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <input type="text" name="phase1_min">
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <p style="color: gray;">นาที</p>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="col s4">
+          <label for="">ปากมกลูกเปิดหมด (น.)</label>
+          <input type="text" class="timepicker" name="uterus">
+        </div>
+        <div class="col s2 l3"></div>
+        <div class="col s3 l2">
+          <label for="">ระยะที่ 2 ของการคลอด</label>
+          <input type="text" name="phase2_hour" >
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <p style="color: gray;">ชม</p>
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <input type="text" name="phase2_min">
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <p style="color: gray;">นาที</p>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="col s2 l3">
+          <label for="">ทารกคลอดวันที่</label>
+          <input type="text" class="datepicker" name="bornDate">
+        </div>
+        <div class="col s2 l1">
+          <label for="">เวลา (น.)</label>
+          <input type="text" class="timepicker" name="bornTime" >
+        </div>
+        <div class="col s2 l3"></div>
+        <div class="col s3 l2">
+          <label for="">ระยะที่ 3 ของการคลอด</label>
+          <input type="text" name="phase3_hour" >
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <p style="color: gray;">ชม</p>
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <input type="text" name="phase3_min">
+        </div>
+        <div class="col s1">
+          <label style="color: white !important;">.</label>
+          <p style="color: gray;">นาที</p>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="col s4">
+          <label for="">รกคลอดเวลา (น.)</label>
+          <input type="text" class="timepicker" name="placenta">
+        </div>
+      </div>
+
+      <div class="row"></div>
+
+      <div class="col s2">
+        <label for="">Type of MR :</label>
+        <select id="MR" name="MR">
+          <option value="0">MR</option>
+          <option value="1">Spontaneous</option>
+          <option value="2">ARM</option>
+        </select>
+      </div>
+      <div class="col s2">
+        <label for="">วันที่</label>
+        <input type="text" class="datepicker" name="MR_date">
+      </div>
+      <div class="col s2">
+        <label for="">เวลา (น.)</label>
+        <input type="text" class="timepicker" name="MR_time">
+      </div>
+      <div class="col s6">
+        <label for="">ลักษณะ</label>
+        <input type="text" name="appearance">
+      </div>
+
+      <div class="col s12">
+        <label for="">Medication(Time &amp; does)</label>
+        <input type="text" name="med_time_does">
+      </div>
+
+      <div class="col s2">
+        <label for="">Delivery :</label>
+        <select id="Delivery" name="Delivery">
+          <option value="0">Delivery</option>
+          <option value="1">Normal</option>
+          <option value="2">Abnormal</option>
+        </select>
+      </div>
+      <div class="col s4">
+        <label style="color: white !important;">.</label>
+        <input type="text" name="delivery_field">
+      </div>
+      <div class="col s4">
+        <label for="">Indication</label>
+        <input type="text" name="Indication" placeholder="Indication">
+      </div>
+
+      <div class="row"></div>
+      <div class="col s7"></div>
+      <div class="col s5">
+        <div class="col s3">
+          <p style="color: gray;" class="right">ผู้ทำคลอด</p>
+        </div>
+        <div class="col s6">
+          <input type="text" class="left" name="birth_delivery">
+        </div>
+        <div class="col s3">
+          <p style="color: gray;" class="left">แพทย์/พยาบาล</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <div class="col s6">
+            <label for="">Injuries:</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="col s2">
+          <label for="">Type of Episiotomy</label>
+          <select id="Episiotomy" name="Episiotomy">
+            <option value="0">Episiotomy</option>
+            <option value="1">Median</option>
+            <option value="2">RML</option>
+            <option value="3">LML</option>
+          </select>
+        </div>
+
+        <div class="col s3 l2">
+          <label for="">Lacerated: Perineum</label>
+          <select id="Perineum" name="Perineum">
+            <option value="0">Perineum</option>
+            <option value="1">NO Tear</option>
+            <option value="2">1</option>
+            <option value="3">2</option>
+            <option value="4">3</option>
+            <option value="5">Rectum</option>
+            <option value="6">Cervix</option>
+          </select>
+        </div>
+
+        <div class="col s3">
+          <label for="">Method of Suture</label>
+          <select id="Suture" name="Suture">
+            <option value="0">Suture</option>
+            <option value="1">Subcutaneous with chromic cutgut</option>
+            <option value="2">Others</option>
+          </select>
+        </div>
+      </div>
+
+
+
+      <div class="row"></div>
+      <div class="col s2">
+        <label for="">รกและสายสะดือ:</label>
+        <select id="placenta_cord" name="placenta_cord">
+          <option value="0">รกและสายสะดือ</option>
+          <option value="1">Spontaneous delivery</option>
+          <option value="2">Manual removal</option>
+        </select>
+      </div>
+      <div class="col s2">
+        <label for="">น้ำหนักรก (กรัม)</label>
+        <input type="text" name="placenta_w">
+      </div>
+      <div class="col s2">
+        <label for="">สายสะดือยาว (ซม.)</label>
+        <input type="text" name="cord_length">
+      </div>
+      <div class="row"></div>
+      <div class="col s2">
+        <label for="">ลักษณะรก:</label>
+        <select id="placenta_app" name="placenta_app">
+          <option value="0">ลักษณะรก</option>
+          <option value="1">ปกติ</option>
+          <option value="2">ผิดปกติ</option>
+        </select>
+      </div>
+      <div class="col s2">
+        <label style="color: white !important;">.</label>
+        <input type="text" name="placenta_app_field">
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <select id="placenta_all" name="placenta_all">
+          <option value="1">ครบ</option>
+          <option value="2">ไม่ครบ</option>
+        </select>
+      </div>
+
+      <div class="col s7">
+        <label for="">ลักษณะผิดปกติ (ระบุ)</label>
+        <input type="text" name="abnormalcord_text">
+      </div>
+
+      <div class="col s2 m3">
+        <label for="">POSTPARTUM CONDITION</label>
+        <select id="POSTPARTUM" name="POSTPARTUM">
+          <option value="1">Normal</option>
+          <option value="2">Abnormal</option>
+        </select>
+      </div>
+      <div class="col s3 l2">
+        <label for="">Total blood loss (c.c.)</label>
+        <input type="text" name="blood_loss">
+      </div>
+      <div class="col s1">
+        <label for="">BP</label>
+        <input type="text" name="BP">
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <p style="color: gray;" class="center-align">/</p>
+      </div>
+      <div class="col s1">
+        <label for="">mmHg</label>
+        <input type="text" name="mmHg">
+      </div>
+
+      <div class="col s8">
+        <label for="">Medication (Time &amp; does) </label>
+        <input type="text" name="med_time_does2">
+      </div>
+
+      <div class="row"></div>
+
+      <div class="col s2">
+        <label for="">เวลา (น.)</label>
+        <input type="text" class="timepicker" name="time1">
+      </div>
+      <div class="col s1">
+        <label for="">BP</label>
+        <input type="text" name="BP1">
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <p style="color: gray;" class="center-align">/</p>
+      </div>
+      <div class="col s1">
+        <label for="">mmHg</label>
+        <input type="text" name="mmHg1">
+      </div>
+      <div class="col s2">
+        <label for="">PR/min</label>
+        <input type="text" name="PR1">
+      </div>
+      <div class="col s5">
+        <label for="">note</label>
+        <input type="text" name="note1">
+      </div>
+
+      <div class="col s2">
+        <label for="">เวลา (น.)</label>
+        <input type="text" class="timepicker" name="time2">
+      </div>
+      <div class="col s1">
+        <label for="">BP</label>
+        <input type="text" name="BP2">
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <p style="color: gray;" class="center-align">/</p>
+      </div>
+      <div class="col s1">
+        <label for="">mmHg</label>
+        <input type="text" name="mmHg2">
+      </div>
+      <div class="col s2">
+        <label for="">PR/min</label>
+        <input type="text" name="PR2">
+      </div>
+      <div class="col s5">
+        <label for="">note</label>
+        <input type="text" name="note2">
+      </div>
+
+      <div class="col s2">
+        <label for="">เวลา (น.)</label>
+        <input type="text" class="timepicker" name="time3">
+      </div>
+      <div class="col s1">
+        <label for="">BP</label>
+        <input type="text" name="BP3">
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <p style="color: gray;" class="center-align">/</p>
+      </div>
+      <div class="col s1">
+        <label for="">mmHg</label>
+        <input type="text" name="mmHg3">
+      </div>
+      <div class="col s2">
+        <label for="">PR/min</label>
+        <input type="text" name="PR3">
+      </div>
+      <div class="col s5">
+        <label for="">note</label>
+        <input type="text" name="note3">
+      </div>
+
+      <div class="col s2">
+        <label for="">เวลา (น.)</label>
+        <input type="text" class="timepicker" name="time4">
+      </div>
+      <div class="col s1">
+        <label for="">BP</label>
+        <input type="text" name="BP4">
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <p style="color: gray;" class="center-align">/</p>
+      </div>
+      <div class="col s1">
+        <label for="">mmHg</label>
+        <input type="text" name="mmHg4">
+      </div>
+      <div class="col s2">
+        <label for="">PR/min</label>
+        <input type="text" name="PR4">
+      </div>
+      <div class="col s5">
+        <label for="">note</label>
+        <input type="text" name="note4">
+      </div>
+
+      <div class="col s2">
+        <label for="">เวลา (น.)</label>
+        <input type="text" class="timepicker" name="time5">
+      </div>
+      <div class="col s1">
+        <label for="">BP</label>
+        <input type="text" name="BP5">
+      </div>
+      <div class="col s1">
+        <label style="color: white !important;">.</label>
+        <p style="color: gray;" class="center-align">/</p>
+      </div>
+      <div class="col s1">
+        <label for="">mmHg</label>
+        <input type="text" name="mmHg5">
+      </div>
+      <div class="col s2">
+        <label for="">PR/min</label>
+        <input type="text" name="PR5">
+      </div>
+      <div class="col s5">
+        <label for="">note</label>
+        <input type="text" name="note5">
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <div class="col s1">
+            <label for="">ทารก:</label>
+          </div>
+          <div class="col s3"></div>
+          <div class="col s2">
+            <label for="">APGAR Score:</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="col s1">
+          <label for="">เพศ</label>
+          <input type="text" name="gender">
+        </div>
+        <div class="col s1 m2">
+          <label for="">น้ำหนัก (กรัม)</label>
+          <input type="text" name="weight">
+        </div>
+
+        <div class="col s6">
+          <div class="col s2"></div>
+          <div class="col s3">
+            <label for="">1 นาที</label>
+            <input type="text" name="min1">
+          </div>
+          <div class="col s3">
+            <label for="">5 นาที</label>
+            <input type="text" name="min5">
+          </div>
+          <div class="col s3">
+            <label for="">10 นาที</label>
+            <input type="text" name="min10">
+          </div>
+        </div>
+      </div>
+
+      <div class="col s2">
+        <label for="">OF (ซม.)</label>
+        <input type="text" name="OF">
+      </div>
+      <div class="col s2">
+        <label for="">อก (ซม.)</label>
+        <input type="text" name="chest">
+      </div>
+      <div class="col s2">
+        <label for="">ยาว (ซม.)</label>
+        <input type="text" name="length">
+      </div>
+      <div class="col s3">
+        <label for="">สภาพทารก</label>
+        <select id="infant" name="infant">
+          <option value="1">ไม่มีสภาวะแทรกซ้อน</option>
+          <option value="2">มีภาวะแทรกซ้อน</option>
+        </select>
+      </div>
+
+      <div class="col s12">
+        <label for="">Remark &amp; Treatment</label>
+        <input type="text" name="remark">
+      </div>
+
+      <div class="col s3">
+        <label for="">หลังคลอด 2 ชม.</label>
+      </div>
+      <div class="col s1">
+        <label for="">มารดา</label>
+      </div>
+      <div class="col s5"></div>
+      <div class="col s1">
+        <label for="">ทารก</label>
+      </div>
+
+      <div class="row"></div>
+      <div class="col s1"></div>
+      <div class="col s5">
+        <label for="">สภาพทั่วไปก่อนย้าย</label>
+        <input type="text" name="mom_state">
+      </div>
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label for="">สภาพทั่วไปก่อนย้าย</label>
+        <input type="text" name="baby_state">
+      </div>
+      <div class="row"></div>
+      <div class="col s1"></div>
+      <div class="col s2">
+        <label for="">สัญญาณชีพ T (c)</label>
+        <input type="text" name="T_cc">
+      </div>
+      <div class="col s1">
+        <label for="">PR/min</label>
+        <input type="text" name="PR_min">
+      </div>
+      <div class="col s1">
+        <label for="">R/min</label>
+        <input type="text" name="R_min">
+      </div>
+      <div class="col s1">
+        <label for="">BP/mmHg</label>
+        <input type="text" name="BP_mmHg">
+      </div>
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label for="">อุณหภูมิกาย</label>
+        <input type="text" name="temp">
+      </div>
+      <div class="row"></div>
+      <div class="col s1"></div>
+      <div class="col s5">
+        <label for="">การหดรัดตัวของมดลูก</label>
+        <input type="text" name="uterus_contract">
+      </div>
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label for="">การดูดนม</label>
+        <input type="text" name="baby_milk">
+      </div>
+      <div class="row"></div>
+      <div class="col s1"></div>
+      <div class="col s5">
+        <label for="">การขับปัสวะ</label>
+        <input type="text" name="urine_out">
+      </div>
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label for="">การขับถ่าย</label>
+        <input type="text" name="excretion">
+      </div>
+      <div class="row"></div>
+      <div class="col s1"></div>
+      <div class="col s5">
+        <label for="">การหลั่งของน้ำนม</label>
+        <input type="text" name="breast_milk">
+      </div>
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label for="">ภาวะผิดปกติอื่นๆ</label>
+        <input type="text" name="baby_abnormalities">
+      </div>
+      <div class="row"></div>
+      <div class="col s1"></div>
+      <div class="col s5">
+        <label for="">ภาวะผิดปกติอื่นๆ</label>
+        <input type="text" name="mom_abnormalities">
+      </div>
+      <div class="col s1"></div>
+      <div class="col s4">
+        <label for="">ผู้บันทึก (พยาบาลวิชาชีพ)</label>
+        <input type="text" name="logged_nurse">
+      </div>
+
+      <div class="row"></div>
+      <div class="col s10"></div>
+      <div class="col s2">
+        <button class="btn waves-efhg rvcdfect waves-light right" type="submit" name="action">Save</button>
+      </div>
+      <div class="row"></div>
+
+  </div>
+  </form>
+</div>
+</div>

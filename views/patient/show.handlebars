@@ -1,0 +1,211 @@
+<div class="showpage">
+  <h4 style="font-family:Ekk;font-weight:bold;">{{patient.name}}</h4>
+</div>
+
+<table class="striped z-depth-3" style="margin-bottom:30px;">
+  <thead>
+    <tr>
+      <th class="dashboard-text">
+       แบบฟอร์ม
+      </th>
+      <th>สร้างโดย</th>
+      <th>อัพเดทล่าสุดโดย</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#if patient.form1}}
+    <tr>
+      <td class="dashboard-text">
+        <a href="">
+          แบบรายงานประวัติ-ตรวจร่างกายผู้ป่วยทางสูติกรรม
+        </a>
+      </td>
+      <td>
+        <p>{{patient.form1.user_created}}</p>
+      </td>
+      <td>
+        {{#if patient.form1.user_updated}}
+        <p>{{patient.form1.user_updated}}</p>
+        {{else}}
+        <p>ยังไม่มีการอัพเดท</p>
+        {{/if}}
+      </td>
+      <td class="center">
+        <a href="/patient/show/form/1/{{patient.form1._id}}" class="btn-floating btn tooltipped" data-position="top" data-delay="20"
+          data-tooltip="ดูฟอร์ม">
+          <i class="material-icons">visibility</i>
+        </a>
+        <a href="/patient/edit/form/1/{{patient.form1.id}}" class="btn-floating tooltipped" data-position="top" data-delay="20" data-tooltip="แก้ไข"
+          name="form1">
+          <i class="material-icons">edit</i>
+        </a>
+        <form action="/patient/delete/1/{{patient.form1.id}}?_method=DELETE" method="post" id="delete-form">
+          <input type="hidden" name="_method" value="DELETE">
+          
+          <!-- Modal Trigger -->
+          <a class="waves-effect waves-light modal-trigger btn-floating red tooltipped" data-position="top" data-delay="20" data-tooltip="ลบ" href="#modal1"><i class="material-icons">delete</i></a>
+
+          <!-- Modal Structure -->
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Delete Confirmation</h4>
+              <p style="font-size: 18px !important;">ยืนยันการลบฟอร์ม "แบบรายงานประวัติ-ตรวจร่างกายผู้ป่วยทางสูติกรรม" ของผู้ป่วย {{patient.name}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ตกลง</button>
+              <a class="modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ยกเลิก</a>
+            </div>
+          </div>
+
+        </form> <!-- End Form -->
+      </td>
+    </tr>
+    {{/if}} {{#if patient.form2}}
+    <tr>
+      <td class="dashboard-text">
+        <a href="">
+         แบบบันทึกรายงานการคลอด
+        </a>
+      </td>
+      <td>
+        <p>{{patient.form2.user_created}}</p>
+      </td>
+      <td>
+        {{#if patient.form2.user_updated}}
+        <p>{{patient.form2.user_updated}}</p>
+        {{else}}
+        <p>ยังไม่มีการอัพเดท</p>
+        {{/if}}
+      </td>
+      <td class="center">
+        <a href="/patient/show/form/2/{{patient.form2._id}}" class="btn-floating btn tooltipped" data-position="top" data-delay="20"
+          data-tooltip="ดูฟอร์ม">
+          <i class="material-icons">visibility</i>
+        </a>
+        <a href="/patient/edit/form/2/{{patient.form2.id}}" class="btn-floating tooltipped" data-position="top" data-delay="20" data-tooltip="แก้ไข"
+          name="form2">
+          <i class="material-icons">edit</i>
+        </a>
+        <form action="/patient/delete/2/{{patient.form2.id}}?_method=DELETE" method="post" id="delete-form">
+          <input type="hidden" name="_method" value="DELETE">
+
+          <!-- Modal Trigger -->
+          <a class="waves-effect waves-light modal-trigger btn-floating red tooltipped" data-position="top" data-delay="20" data-tooltip="ลบ" href="#modal2"><i class="material-icons">delete</i></a>
+
+          <!-- Modal Structure -->
+          <div id="modal2" class="modal">
+            <div class="modal-content">
+              <h4>Delete Confirmation</h4>
+              <p style="font-size: 18px !important;">ยืนยันการลบฟอร์ม "แบบบันทึกรายงานการคลอด" ของผู้ป่วย {{patient.name}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ตกลง</button>
+              <a class="modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ยกเลิก</a>
+            </div>
+          </div>
+
+        </form> <!-- End Form -->
+      </td>
+    </tr>
+    {{/if}} {{#if patient.form3}}
+    <tr>
+      <td class="dashboard-text">
+        <a href="">
+          แบบสรุปข้อมูลการจาหน่าย / ส่งต่อผู้ป่วยเพื่อการดูแลต่อเนื่อง(สูติ/หลังคลอด)
+        </a>
+      </td>
+      <td>
+        <p>{{patient.form3.user_created}}</p>
+      </td>
+      <td>
+        {{#if patient.form3.user_updated}}
+        <p>{{patient.form3.user_updated}}</p>
+        {{else}}
+        <p>ยังไม่มีการอัพเดท</p>
+        {{/if}}
+      </td>
+      <td class="center">
+        <a href="/patient/show/form/3/{{patient.form3._id}}" class="btn-floating btn tooltipped" data-position="top" data-delay="20"
+          data-tooltip="ดูฟอร์ม">
+          <i class="material-icons">visibility</i>
+        </a>
+        <a href="/patient/edit/form/3/{{patient.form3.id}}" class="btn-floating tooltipped" data-position="top" data-delay="20" data-tooltip="แก้ไข"
+          name="form3">
+          <i class="material-icons">edit</i>
+        </a>
+        <form action="/patient/delete/3/{{patient.form3.id}}?_method=DELETE" method="post" id="delete-form">
+          <input type="hidden" name="_method" value="DELETE">
+
+          <!-- Modal Trigger -->
+          <a class="waves-effect waves-light modal-trigger btn-floating red tooltipped" data-position="top" data-delay="20" data-tooltip="ลบ" href="#modal3"><i class="material-icons">delete</i></a>
+
+          <!-- Modal Structure -->
+          <div id="modal3" class="modal">
+            <div class="modal-content">
+              <h4>Delete Confirmation</h4>
+              <p style="font-size: 18px !important;">ยืนยันการลบฟอร์ม "แบบสรุปข้อมูลการจาหน่าย / ส่งต่อผู้ป่วยเพื่อการดูแลต่อเนื่อง(สูติ/หลังคลอด)" ของผู้ป่วย {{patient.name}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ตกลง</button>
+              <a class="modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ยกเลิก</a>
+            </div>
+          </div>
+
+        </form> <!-- End Form -->
+      </td>
+    </tr>
+    {{/if}} {{#if patient.form4}}
+    <tr>
+      <td class="dashboard-text">
+        <a href="">
+          ใบประเมินแรกรับ
+        </a>
+      </td>
+      <td>
+        <p>{{patient.form4.user_created}}</p>
+      </td>
+      <td>
+        {{#if patient.form4.user_updated}}
+        <p>{{patient.form4.user_updated}}</p>
+        {{else}}
+        <p>ยังไม่มีการอัพเดท</p>
+        {{/if}}
+      </td>
+      <td class="center">
+        <a href="/patient/show/form/4/{{patient.form4._id}}" class="btn-floating btn tooltipped" data-position="top" data-delay="20"
+          data-tooltip="เพิ่มเติม">
+          <i class="material-icons">visibility</i>
+        </a>
+        <a href="/patient/edit/form/4/{{patient.form4.id}}" class="btn-floating tooltipped" data-position="top" data-delay="20" data-tooltip="แก้ไข"
+          name="form4">
+          <i class="material-icons">edit</i>
+        </a>
+        <form action="/patient/delete/4/{{patient.form4.id}}?_method=DELETE" method="post" id="delete-form">
+          <input type="hidden" name="_method" value="DELETE">
+
+          <!-- Modal Trigger -->
+          <a class="waves-effect waves-light modal-trigger btn-floating red tooltipped" data-position="top" data-delay="20" data-tooltip="ลบ" href="#modal4"><i class="material-icons">delete</i></a>
+
+          <!-- Modal Structure -->
+          <div id="modal4" class="modal">
+            <div class="modal-content">
+              <h4>Delete Confirmation</h4>
+              <p style="font-size: 18px !important;">ยืนยันการลบฟอร์ม "ใบประเมินแรกรับ" ของผู้ป่วย {{patient.name}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ตกลง</button>
+              <a class="modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ยกเลิก</a>
+            </div>
+          </div>
+        </form> <!-- End Form -->
+      </td>
+    </tr>
+    {{/if}}
+  </tbody>
+</table>
+<div class="showpage-addbtn">
+  <a href="/patient/add/forms/{{patient._id}}" class="btn green waves-effect waves-light z-depth-2" style="padding-left:10px; padding-right:10px;">
+    <i class="material-icons left">assignment</i>
+    <span style="font-size:16px; padding-top: 5px;">เพิ่มฟอร์ม</span>
+  </a>
+</div>

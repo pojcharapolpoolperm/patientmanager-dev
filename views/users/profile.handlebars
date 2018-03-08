@@ -1,0 +1,65 @@
+<div class="row"></div>
+<div class="row">
+  <div class="col s3 m3"></div>
+  <div class="col s6 m6 z-depth-3 ">
+    <img src="/img/logo.png" class="logo">
+    <h4 class="center-align"><i class="fa fa-address-card"></i> {{user.firstName}} {{user.lastName}}</h4>
+    <br>
+    <div class="row col s12 register">
+
+      <form action="/user/profile/update/{{user._id}}?_method=PUT" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="input-field col s6">
+          <input type="text" name="firstName" id="firstName" class="validate" value="{{user.firstName}}" required {{#unless user.admin}} readonly {{/unless}}>
+          <label for="firstName">
+            <i class="fa fa-user"></i> First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="text" name="lastName" id="lastName" class="validate" value="{{user.lastName}}" required {{#unless user.admin}} readonly {{/unless}}>
+          <label for="lastName">
+            <i class="fa fa-user"></i> Last Name</label>
+        </div>
+        {{!--
+        <div class="col s6 m12 file-field input-field">
+          <div class="btn-floating col s2 white z-depth-2">
+            <i class="material-icons" style="padding-left: 22.5%; color:darkgray">cloud_upload</i>
+            <input type="file">
+          </div>
+          <div class="col s10 file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div> --}}
+        <div class="input-field col s12">
+          <input type="text" name="username" id="username" class="validate" value="{{user.username}}" required {{#unless user.admin}} readonly {{/unless}}>
+          <label for="username">
+            <i class="fa fa-user"></i> Username</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="email" name="email" id="email" class="validate" required value="{{user.email}}" {{#unless user.admin}} readonly {{/unless}}>
+          <label for="email">
+            <i class="fa fa-envelope"></i> Email</label>
+        </div>
+        {{#if user.admin}}
+        <div class="input-field col s12">
+          <input type="password" name="password" id="password" class="validate" required>
+          <label for="pasword">
+            <i class="fa fa-lock"></i> New Password</label>
+        </div>
+        <div class="input-field col s12">
+          <input type="password" name="check_password" id="check_password" class="validate" required>
+          <label for="check_password">
+            <i class="fa fa-lock"></i> Confirm Password</label>
+        </div>
+        {{/if}}
+        <br>
+        <div>
+          {{#if user.admin}}
+          <button type="submit" class="btn waves-effect waves-light green left">Update</button>
+          {{/if}}
+          <a class="btn waves-effect waves-light red right" href="javascript:history.back()" name="action">{{#if user.admin}}Cancel{{else}}Back{{/if}}</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col s3 m3"></div>
+</div>

@@ -1,0 +1,395 @@
+{{!-- แบบสรุปข้อมูลการจาหน่าย /ส่งต่อผู้ป่วยเพื่อการดูแลต่อเนื่อง(สูติ/หลังคลอด) --}}
+
+<br>
+<div class="row z-depth-3 no-print">
+  <div class="col s12 show">
+
+    {{!-- Form --}}
+    <div class="row"></div>
+    <div class="col s12 center">
+      <span style="font-size: 125%; font-weight: bold;">แบบสรุปข้อมูลการจาหน่าย / ส่งต่อผู้ป่วยเพื่อการดูแลต่อเนื่อง (สูติ/หลังคลอด)</span>
+    </div>
+    <div class="row"></div>
+    <div class="row"></div>
+    {{!-- First Line --}}
+
+    <div class="col s2">
+      <label>หอผู้ป่วย</label>
+      <input type="text" name="dorm" placeholder="หอผู้ป่วย" value="{{form3.dorm}}" readonly>
+    </div>
+    <div class="col s2 offset-s8">
+      <label>เตียง/ห้อง</label>
+      <input type="text" name="room" placeholder="เตียง/ห้อง" value="{{form3.room}}" readonly>
+    </div>
+    <div class="row"></div>
+    <div class="col s4">
+      <label>ชื่อ-สกุล</label>
+      <input type="text" name="name" placeholder="ชื่อ-สกุล" value="{{patient.name}}" readonly>
+    </div>
+    <div class="col s2">
+      <label>อายุ (ปี)</label>
+      <input type="number" name="age" placeholder="อายุ (ปี)" value="{{patient.age}}" readonly>
+    </div>
+    <div class="col s2">
+      <label>HN</label>
+      <input type="text" name="HN" placeholder="HN" value="{{patient.HN}}" readonly>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div class="col s6">
+          <label for="">ที่อยู่(ปัจจุบัน)</label>
+        </div>
+      </div>
+    </div>
+    <div class="col s12">
+      <div class="col s2">
+        <label>เลขที่</label>
+        <input type="text" name="addr1" placeholder="เลขที่" value="{{patient.addr1}}" readonly>
+      </div>
+      <div class="col s3">
+        <label>หมู่/ถนน</label>
+        <input type="text" name="addr2" placeholder="หมู่/ถนน" value="{{patient.addr2}}" readonly>
+      </div>
+      <div class="col s3">
+        <label>ตำบล</label>
+        <input type="text" name="addr3" placeholder="ตำบล" value="{{patient.addr3}}" readonly>
+      </div>
+
+      <div class="col s3">
+        <label>อำเภอ</label>
+        <input type="text" name="addr4" placeholder="อำเภอ" value="{{patient.addr4}}" readonly>
+      </div>
+      <div class="row"></div>
+      <div class="col s3 l2">
+        <label>จังหวัด</label>
+        <select id="addr5" name="addr5" disabled>
+          {{#select patient.addr5 }}
+          <option value='กรุงเทพมหานคร'>กรุงเทพมหานคร</option>
+          <option value='กระบี่'>กระบี่</option>
+          <option value='กาญจนบุรี'>กาญจนบุรี</option>
+          <option value='กาฬสินธุ์'>กาฬสินธุ์</option>
+          <option value='กำแพงเพชร'>กำแพงเพชร</option>
+          <option value='ขอนแก่น'>ขอนแก่น</option>
+          <option value='จันทบุรี'>จันทบุรี</option>
+          <option value='ฉะเชิงเทรา'>ฉะเชิงเทรา</option>
+          <option value='ชลบุรี'>ชลบุรี</option>
+          <option value='ชัยนาท'>ชัยนาท</option>
+          <option value='ชัยภูมิ'>ชัยภูมิ</option>
+          <option value='ชุมพร'>ชุมพร</option>
+          <option value='เชียงราย'>เชียงราย</option>
+          <option value='เชียงใหม่'>เชียงใหม่</option>
+          <option value='ตรัง'>ตรัง</option>
+          <option value='ตราด'>ตราด</option>
+          <option value='ตาก'>ตาก</option>
+          <option value='นครนายก'>นครนายก</option>
+          <option value='นครปฐม'>นครปฐม</option>
+          <option value='นครพนม'>นครพนม</option>
+          <option value='นครราชสีมา'>นครราชสีมา</option>
+          <option value='นครศรีธรรมราช'>นครศรีธรรมราช</option>
+          <option value='นครสวรรค์'>นครสวรรค์</option>
+          <option value='นนทบุรี'>นนทบุรี</option>
+          <option value='นราธิวาส'>นราธิวาส</option>
+          <option value='น่าน'>น่าน</option>
+          <option value='บึงกาฬ'>บึงกาฬ</option>
+          <option value='บุรีรัมย์'>บุรีรัมย์</option>
+          <option value='ปทุมธานี'>ปทุมธานี</option>
+          <option value='ประจวบคีรีขันธ์'>ประจวบคีรีขันธ์</option>
+          <option value='ปราจีนบุรี'>ปราจีนบุรี</option>
+          <option value='ปัตตานี'>ปัตตานี</option>
+          <option value='พระนครศรีอยุธยา'>พระนครศรีอยุธยา</option>
+          <option value='พังงา'>พังงา</option>
+          <option value='พัทลุง'>พัทลุง</option>
+          <option value='พิจิตร'>พิจิตร</option>
+          <option value='พิษณุโลก'>พิษณุโลก</option>
+          <option value='เพชรบุรี'>เพชรบุรี</option>
+          <option value='เพชรบูรณ์'>เพชรบูรณ์</option>
+          <option value='แพร่'>แพร่</option>
+          <option value='พะเยา'>พะเยา</option>
+          <option value='ภูเก็ต'>ภูเก็ต</option>
+          <option value='มหาสารคาม'>มหาสารคาม</option>
+          <option value='มุกดาหาร'>มุกดาหาร</option>
+          <option value='แม่ฮ่องสอน'>แม่ฮ่องสอน</option>
+          <option value='ยะลา'>ยะลา</option>
+          <option value='ยโสธร'>ยโสธร</option>
+          <option value='ร้อยเอ็ด'>ร้อยเอ็ด</option>
+          <option value='ระนอง'>ระนอง</option>
+          <option value='ระยอง'>ระยอง</option>
+          <option value='ราชบุรี'>ราชบุรี</option>
+          <option value='ลพบุรี'>ลพบุรี</option>
+          <option value='ลำปาง'>ลำปาง</option>
+          <option value='ลำพูน'>ลำพูน</option>
+          <option value='เลย'>เลย</option>
+          <option value='ศรีสะเกษ'>ศรีสะเกษ</option>
+          <option value='สกลนคร'>สกลนคร</option>
+          <option value='สงขลา'>สงขลา</option>
+          <option value='สตูล'>สตูล</option>
+          <option value='สมุทรปราการ'>สมุทรปราการ</option>
+          <option value='สมุทรสงคราม'>สมุทรสงคราม</option>
+          <option value='สมุทรสาคร'>สมุทรสาคร</option>
+          <option value='สระแก้ว'>สระแก้ว</option>
+          <option value='สระบุรี'>สระบุรี</option>
+          <option value='สิงห์บุรี'>สิงห์บุรี</option>
+          <option value='สุโขทัย'>สุโขทัย</option>
+          <option value='สุพรรณบุรี'>สุพรรณบุรี</option>
+          <option value='สุราษฎร์ธานี'>สุราษฎร์ธานี</option>
+          <option value='สุรินทร์'>สุรินทร์</option>
+          <option value='หนองคาย'>หนองคาย</option>
+          <option value='หนองบัวลำภู'>หนองบัวลำภู</option>
+          <option value='อ่างทอง'>อ่างทอง</option>
+          <option value='อุดรธานี'>อุดรธานี</option>
+          <option value='อุทัยธานี'>อุทัยธานี</option>
+          <option value='อุตรดิตถ์'>อุตรดิตถ์</option>
+          <option value='อุบลราชธานี'>อุบลราชธานี</option>
+          <option value='อำนาจเจริญ'>อำนาจเจริญ</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s3 l2">
+        <label>โทรศัพท์</label>
+        <input type="tel" name="phone" placeholder="โทรศัพท์" value="{{patient.phone}}" readonly>
+      </div>
+      <div class="col s3 l2">
+        <label>สถานที่ใกล้เคียง</label>
+        <input type="text" name="nearbyplace" placeholder="สถานที่ใกล้เคียง" value="{{form3.nearbyplace}}" readonly>
+      </div>
+      <div class="col s3 l2">
+        <label>อาชีพ</label>
+        <input type="text" name="job" placeholder="อาชีพ" value="{{patient.job}}" readonly>
+      </div>
+    </div>
+    <div class="col s3">
+      <label>วันที่อยู่ป่วย</label>
+      <input type="text" name="checkInDate" placeholder="วันที่อยู่ป่วย" value="{{form3.checkInDate}}" readonly>
+    </div>
+    <div class="col s2">
+      <label>เวลา</label>
+      <input type="tel" name="checkInTime" placeholder="เวลา" value="{{form3.checkInTime}}" readonly>
+    </div>
+    <div class="col s3 offset-s4">
+      <label>แพทย์</label>
+      <input type="text" name="doctor" placeholder="แพทย์" value="{{form3.doctor}}" readonly>
+    </div>
+    <div class="col s12">
+      <label>อาการสำคัญ</label>
+      <input type="text" name="symptom" placeholder="อาการสำคัญ" value="{{form3.symptom}}" readonly>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="col s6">
+          <label for="">อาการปัจจุบัน</label>
+        </div>
+      </div>
+    </div>
+    <div class="col s12">
+      <div class="col s1">
+        <label>G</label>
+        <input type="text" name="G" placeholder="G" value="{{patient.G}}" readonly>
+      </div>
+      <div class="col s1">
+        <label>P</label>
+        <input type="text" name="P" placeholder="P" value="{{patient.P}}" readonly>
+      </div>
+      <div class="col s2 l1 ">
+        <label>GA (wks)</label>
+        <input type="text" name="GA" placeholder="GA (wks)" value="{{patient.GA}}" readonly>
+      </div>
+      <div class="col s8 l9">
+        <label>...</label>
+        <input type="text" name="currentSymptom" placeholder="อาการปัจจุบัน" value="{{form3.currentSymptom}}" readonly>
+      </div>
+      <div class="col s4">
+        <label>ภาวะแทรกซ้อน</label>
+        <input type="text" name="complications" placeholder="ภาวะแทรกซ้อน" value="{{form3.complications}}" readonly>
+      </div>
+      <div class="col s8">
+        <label>โรคประจำตัว</label>
+        <input type="text" name="congenitalDisorder" placeholder="โรคประจำตัว" value="{{form3.congenitalDisorder}}" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="col s6">
+          <label for="">สัญญานชีพแรกรับ</label>
+        </div>
+      </div>
+    </div>
+    <div class="col s12">
+      <div class="col s1">
+        <label>T (c)</label>
+        <input type="text" name="T" placeholder="T (c)" value="{{form3.T}}" readonly>
+      </div>
+      <div class="col s1">
+        <label>P /min</label>
+        <input type="text" name="pressure" placeholder="P /min" value="{{form3.pressure}}" readonly>
+      </div>
+      <div class="col s1">
+        <label>R /min</label>
+        <input type="text" name="R" placeholder="R /min" value="{{form3.R}}" readonly>
+      </div>
+      <div class="col s2 l1">
+        <label>BP (mmHg)</label>
+        <input type="text" name="BP" placeholder="BP (mmHg)" value="{{form3.BP}}" readonly>
+      </div>
+      <div class="col s1">
+        <label>O2Sat %</label>
+        <input type="text" name="O2Sat" placeholder="O2Sat %" value="{{form3.O2Sat}}" readonly>
+      </div>
+      <div class="col s2">
+        <label>น้ำหนัก (กก.)</label>
+        <input type="number" name="weight" placeholder="น้ำหนัก (กก.)" value="{{patient.weight}}" readonly>
+      </div>
+      <div class="col s1 l2">
+        <label>สูง (ซม.)</label>
+        <input type="number" name="height" placeholder="สูง (ซม.)" value="{{patient.height}}" readonly>
+      </div>
+      <div class="col s2 l3">
+        <label>BMI</label>
+        <input type="text" name="BMI" placeholder="BMI" value="{{form3.BMI}}" readonly>
+      </div>
+    </div>
+    <div class="col s6">
+      <label>Diagnosis(1)</label>
+      <input type="text" name="Diagnosis1" placeholder="Diagnosis(1)" value="{{form3.Diagnosis1}}" readonly>
+    </div>
+    <div class="col s6">
+      <label>Diagnosis(2)</label>
+      <input type="text" name="Diagnosis2" placeholder="Diagnosis(2)" value="{{form3.Diagnosis2}}" readonly>
+    </div>
+
+
+
+    <div class="row"></div>
+   
+    <div class="col s12">
+        <div class="left">
+          <a class="btn waves-effect waves-light right blue" href="javascript:print('แบบรายงานประวัติ')" name="action">
+            <i class="fa fa-print"></i> Print</a>
+        </div>
+        <div class="right">
+          <a class="btn waves-effect waves-light right red" href="javascript:history.back()" name="action">Back</a>
+        </div>
+      </div>
+    <div class="row"></div>
+
+    <!-- End Form -->
+  </div>
+</div>
+
+{{!-- Print Form3 --}}
+<div class="printContainer print printForm" id="form1">
+    <div class="title">
+      <p>แบบสรุปข้อมูลการจำหน่าย / ส่งต่อผู้ป่วยเพื่อการดูแลต่อเนื่อง (สูติ/หลังคลอด)
+      </p>
+    </div>
+    <div class="form3-line1" style="margin-bottom:10px;">
+      <p>หอผู้ป่วย</p>
+      <p class="value">{{form3.dorm}}</p>
+      <p></p>
+      <p>เตียง / ห้อง</p>
+      <p class="value">{{form3.room}}</p>
+    </div>
+    <div class="form3-line2">
+      <p>ขื่อ-สกุล</p>
+      <p class="value">{{form3.name}}</p>
+      <p>อายุ</p>
+      <p class="value">{{form3.age}}</p>
+      <p>ปี</p>
+      <p>HN</p>
+      <p class="value">{{form3.HN}}</p>
+      <p></p>
+      <p class="upper-border" style="padding-left: 10px;">สิทธิการรักษา</p>
+    </div>
+    <div class="form3-line3" >
+      <p>ที่อยู่ (ปัจจุบัน) : เลขที่</p>
+      <p class="value">{{form3.addr1}}</p>
+      <p>หมู่ / ถนน</p>
+      <p class="value">{{form3.addr2}}</p>
+      <p>ตำบล</p>
+      <p class="value">{{form3.addr3}}</p>
+      <p></p>
+      <p class="middle-border"></p>
+    </div>
+    <div class="form3-line4">
+      <p>อำเภอ</p>
+      <p class="value">{{form3.addr4}}</p>
+      <p>จังหวัด</p>
+      <p class="value">{{form3.addr5}}</p>
+      <p>โทรศัพท์</p>
+      <p class="value">{{form3.phone}}</p>
+      <p></p>
+      <p class="middle-border"></p>
+    </div>
+    <div class="form3-line5">
+      <p>สถานที่ใกล้เคียง</p>
+      <p class="value">{{form3.nearbyplace}}</p>
+      <p>อาชีพ</p>
+      <p class="value">{{form3.job}}</p>
+      <p></p>
+      <p class="lower-border"></p>
+    </div>
+    <div class="form3-line6">
+      <p>วันที่อยู่ป่วย</p>
+      <p class="value">{{form3.checkInDate}}</p>
+      <p>เวลา</p>
+      <p class="value">{{form3.checkInTime}}</p>
+      <p>น.</p>
+      <p>แพทย์</p>
+      <p class="value">{{form3.doctor}}</p>
+    </div>
+    <div class="form3-line7" style="margin-bottom:5px;">
+      <p>อาการสำคัญ</p>
+      <p class="value">{{form3.symptom}}</p>
+    </div>
+    <div class="form3-line8"style="margin-bottom:5px;" >
+      <p>อาการปัจจุบัน : &nbsp;&nbsp;G</p>
+      <p class="value">{{form3.G}}</p>
+      <p>P</p>
+      <p class="value">{{form3.P}}</p>
+      <p>GA</p>
+      <p class="value">{{form3.GA}}</p>
+      <p>wks</p>
+      <p class="value">{{form3.currentSymptom}}</p>
+    </div>
+    <div class="form3-line9" style="margin-bottom:5px;">
+      <p>ภาวะแทรกซ้อน</p>
+      <p class="value">{{form3.complications}}</p>
+      <p>โรคประจำตัว</p>
+      <p class="value">{{form3.congenitalDisorder}}</p>
+    </div>
+    <div class="form3-line10" style="margin-bottom:5px;">
+      <p>สัญญานชีพแรกรับ : &nbsp;&nbsp;T</p>
+      <p class="value">{{form3.T}}</p>
+      <p>c</p>
+      <p>P</p>
+      <p class="value">{{form3.pressure}}</p>
+      <p>/min</p>
+      <p>R</p>
+      <p class="value">{{form3.R}}</p>
+      <p>/min</p>
+      <p>BP</p>
+      <p class="value">{{form3.BP}}</p>
+      <p>mmHg</p>
+      <p>O2Sat</p>
+      <p class="value">{{form3.O2Sat}}</p>
+      <p>%</p>
+    </div>
+    <div class="form3-line11" style="margin-bottom:5px;">
+      <p></p>
+      <p>น้ำหนัก</p>
+      <p class="value">{{form3.weight}}</p>
+      <p>กก.</p>
+      <p>สูง</p>
+      <p class="value">{{form3.height}}</p>
+      <p>ซม.</p>
+      <p>BMI</p>
+      <p class="value">{{form3.BMI}}</p>
+    </div>
+    <div class="form3-line12">
+      <p>Diagnosis(1)</p>
+      <p class="value">{{form3.Diagnosis1}}</p>
+      <p>Diagnosis(2)</p>
+      <p class="value">{{form3.Diagnosis2}}</p>
+    </div>
+  </div>

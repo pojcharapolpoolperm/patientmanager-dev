@@ -1,0 +1,85 @@
+<div class="searchbar">
+  <form action="/patients/dashboard/search" method="post">
+    <h4 style="font-family:Ekk;font-weight:bold;">รายการผู้ป่วย</h4>
+    <div class="search-input">
+      <input type="text" class="browser-default" id="search" name="search" placeholder="ค้นหา..." style="padding-left:10px;">
+      <button type="submit" class="btn waves-effect waves-light">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </form>
+</div>
+
+{{#if patients}}
+
+<table class="striped z-depth-3">
+  <thead>
+    <tr>
+      <th>
+        <span class="dashboard-text">HN</span>
+      </th>
+      <th>
+        <span class="dashboard-text">ชื่อ-สกุล</span>
+      </th>
+      <th>วันที่บันทึก</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each patients}}
+    <tr class="filter-search">
+      <td>
+        <p class="dashboard-text record-text name-text">{{HN}}</p>
+      </td>
+      <td>
+        <a href="#" class="dashboard-text record-text name-text">{{name}}</a>
+      </td>
+      <td>
+        <span class="record-text">{{formatDate date 'MMMM Do YYYY'}}</span>
+      </td>
+      <td class="center">
+        <a href="/patient/show/{{_id}}" class="btn-floating btn tooltipped" data-position="top" data-delay="20" data-tooltip="เพิ่มเติม">
+          <i class="material-icons">visibility</i>
+        </a>
+        
+        <a href="/patient/edit/{{_id}}" class="btn-floating tooltipped" data-position="top" data-delay="20"
+          data-tooltip="แก้ไข">
+          <i class="material-icons">edit</i>
+        </a>
+        <form action="/patient/profile/remove/{{_id}}?_method=DELETE" method="post" id="delete-form">
+          <input type="hidden" name="_method" value="DELETE">
+
+          <!-- Modal Trigger -->
+          <a class="waves-effect waves-light modal-trigger btn-floating red tooltipped right" data-position="top" data-delay="20" data-tooltip="ลบผู้ป่วย"
+            href="#modal{{id}}" style="margin-right: 20px !important;">
+            <i class="material-icons">delete</i>
+          </a>
+
+          <!-- Modal Structure -->
+          <div id="modal{{id}}" class="modal">
+            <div class="modal-content">
+              <h4>Delete Confirmation</h4>
+              <p style="font-size: 18px !important;">ยืนยันการลบผู้ป่วย {{name}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ตกลง</button>
+              <a class="modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ยกเลิก</a>
+            </div>
+          </div>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+<div class="row">
+  <div class="row">
+    <div class="row"></div>
+    <div class="col s12" >
+      <p style="margin-left:10px;">No patients listed</p>
+
+    </div>
+  </div>
+</div>
+
+{{/if}}

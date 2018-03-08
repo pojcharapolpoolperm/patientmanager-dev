@@ -1,0 +1,168 @@
+@font-face {
+  font-family: Ekk;
+  src: url('../font/Ekk.ttf');
+}
+
+body{
+  background-color: #fbfbfb;
+  min-width: 700px ;
+}
+
+table {
+  background-color: #fff;
+}
+
+.nav-wrapper .fa-bars {
+  font-size: 20px;
+}
+
+.brand-logo {
+  font-family: Ekk;
+  font-weight: bold;
+}
+
+.show {
+  font-weight: 700;
+}
+
+.card-panel {
+  border-radius: 10px;
+}
+
+#delete-form{
+  display: inline;
+}
+
+.dashboard-text{
+  font-size: 15px;
+  padding-left: 1.25em;
+}
+
+.logo_name{
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+}
+
+h4 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.btn-floating{
+  margin-right: 0.5em;
+}
+
+#loginpage{
+  padding: 0px 30px;
+  background-color: #f4f4f4;
+  margin-bottom: 30px;
+}
+
+.login_name{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#loginpage button{
+  margin-bottom: 20px;
+}
+
+#loginpage .ex-block{
+  padding: 10px;
+  margin-bottom: 35px;
+}
+
+.login-container{
+  background: url(/img/login_bg.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size:cover;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 800px; 
+}
+
+.login-margin{
+  margin-top: 15%;
+}
+
+.login-footer{
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.side-nav p{
+  font-size: 16px;
+  color: #2f2f2f;
+  font-weight: 800;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.record-text{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600; 
+}
+
+#search {
+  margin-bottom: 25px;
+  height: 35px;
+  width: 33%;
+}
+
+.searchbar {
+  margin-top: 30px;
+}
+.searchbar h4{
+  margin: 0 !important;
+  float: left;
+}
+
+.searchbar .search-input{
+  float: right;
+}
+
+.searchbar button{
+  padding: 0 10px 5px 10px;
+}
+
+.searchbar input{
+  padding-left: 5px;
+  width: 300px !important;
+}
+
+.searchpage button{
+  margin-right: 100px;
+}
+
+.showpage h4 {
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+.showpage-addbtn a:hover{
+  background-color: #005500 !important;
+}
+
+/* Media Queries */
+@media(max-width: 768px){
+  .brand-logo{
+    font-family: Ekk;
+    font-weight: bold;
+    font-size: 25px !important;
+  }
+}

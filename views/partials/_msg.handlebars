@@ -1,0 +1,26 @@
+{{#if success_msg}}
+    <div class="row" id="success_msg">
+      <div class="col s12">
+        <div class="card-panel green lighten-1">
+          <span class="white-text">{{success_msg}}
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    
+{{/if}}
+
+{{#if error_msg}}
+    <div class="row" id="error_msg">
+      <div class="col s12">
+        <div class="card-panel red lighten-1">
+          <span class="white-text">{{error_msg}}
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+{{/if}}

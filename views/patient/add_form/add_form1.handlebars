@@ -1,0 +1,625 @@
+{{!-- แบบรายงานประวัติ-ตรวจร่างกายผู้ป่วยทางสูติกรรม --}}
+
+<br>
+<div class="row z-depth-3">
+  <div class="col s12">
+
+    {{!-- Form  --}}
+    <form action="/patient/form1/save/{{patient.id}}" method="post">
+      <div class="row"></div>
+      <div class="col s12 center"><span style="font-size: 125%; font-weight: bold;">แบบรายงานประวัติ-ตรวจร่างกายผู้ป่วยทางสูติกรรม</span></div>
+      <div class="row"></div>
+      <div class="row"></div>
+      {{!-- First Line --}}
+      <div class="col s3">
+        <label for="">วัน-เดือน-ปี ที่บันทึก</label>
+        <input type="text" class="datepicker" name="recordDate" placeholder="วัน-เดือน-ปี ที่บันทึก" value="{{today}}">
+      </div>
+      <div class="col s3">
+        <label for="">เวลา</label>
+        <input type="text" class="timepicker" name="recordTime" placeholder="เวลา" value="{{time}}">
+      </div>
+      <div class="col s6">
+        <div class="col s6">
+          <label for="">ประวัติได้จาก</label>
+          <select id="checkFrom" name="history">
+            <option value="0">ประวัติได้จาก</option>
+            <option value="1">ผู้ป่วย</option>
+            <option value="2">ญาติ</option>
+            <option value="3">อื่นๆ</option>
+          </select>
+        </div>
+        <div class="col s6" id="other">
+          <label for="">อื่นๆ</label>
+          <input type="text" name="history_Other">
+        </div>
+      </div>
+
+      {{!-- CC --}}
+      <div class="col s12">
+        <label for="">CC</label>
+        <input type="text" name="CC" placeholder="CC">
+      </div>
+
+      {{!-- PI --}}
+      <div class="col s12">
+        <label for="">PI</label>
+        <input type="text" name="PI" placeholder="PI">
+      </div>
+
+      {{!-- G ... --}}
+      <div class="col s1">
+        <label for="">G</label>
+        <input type="text" name="G" placeholder="G" value="{{patient.G}}">
+      </div>
+      <div class="col s1">
+        <label for="">P</label>
+        <input type="text" name="P" placeholder="P" value="{{patient.P}}">
+      </div>
+      <div class="col s1">
+        <label for="">A</label>
+        <input type="text" name="A" placeholder="A" value="{{patient.A}}">
+      </div>
+      <div class="col s1">
+        <label for="">L</label>
+        <input type="text" name="L" placeholder="L" value="{{patient.L}}">
+      </div>
+      <div class="col s1">
+        <label for="">Last</label>
+        <input type="text" name="Last" placeholder="Last">
+      </div>
+      <div class="col s1">
+        <label for="">LMP</label>
+        <input type="text" name="LMP" placeholder="LMP">
+      </div>
+      <div class="col s1">
+        <label for="">EDC</label>
+        <input type="text" name="EDC" placeholder="EDC">
+      </div>
+      <div class="col s2">
+        <label for="">Preg (wks)</label>
+        <input type="text" name="Preg" placeholder="Preg (wks)">
+      </div>
+      <div class="col s2">
+        <label for="">ANC ที่</label>
+        <input type="text" name="ANC" placeholder="ANC">
+      </div>
+
+      {{!-- First ANC ... --}}
+      <div class="col s2">
+        <label for="">First ANC at (wks)</label>
+        <input type="text" name="first_ANC" placeholder="First ANC at (wks)">
+      </div>
+      <div class="col s2">
+        <label for="">รวม (ครั้ง)</label>
+        <input type="text" name="count_ANC" placeholder="รวม (ครั้ง)">
+      </div>
+      <div class="col s2">
+        <label for="">TT:</label>
+        <select name="TT">
+          <option value="0">TT</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <div class="col s2">
+        <label for="">...</label>
+        <select name="TT_more">
+          <option value="0">เลือก</option>
+          <option value="1">กระตุ้น</option>
+          <option value="2">ครบมาก่อน</option>
+          <option value="3">no</option>
+        </select>
+      </div>
+
+      <div class="row"></div>
+
+      {{!-- VDRl ... --}}
+      <div class="col s1">
+        <label for="">VDRL</label>
+        <input type="text" name="VDRL" placeholder="VDRL">
+      </div>
+      <div class="col s1">
+        <label for="">HbsAg</label>
+        <input type="text" name="HbsAg" placeholder="HbsAg">
+      </div>
+      <div class="col s1">
+        <label for="">HbeAg</label>
+        <input type="text" name="HbeAg" placeholder="HbeAg">
+      </div>
+      <div class="col s1">
+        <label for="">AntiHIV</label>
+        <input type="text" name="AntiHIV" placeholder="AntiHIV">
+      </div>
+      <div class="col s1">
+        <label for="">Hct%</label>
+        <input type="text" name="Hct" placeholder="Hct%">
+      </div>
+      <div class="col s2">
+        <label for="">Blood group</label>
+        <input type="text" name="Blood_Group" placeholder="Blood group">
+      </div>
+      <div class="col s1">
+        <label for="">Rh</label>
+        <input type="text" name="Rh" placeholder="Rh">
+      </div>
+      <div class="col s1">
+        <label for="">OF</label>
+        <input type="text" name="OF" placeholder="OF">
+      </div>
+      <div class="col s1">
+        <label for="">DCIP</label>
+        <input type="text" name="DCIP" placeholder="DCIP">
+      </div>
+
+      {{!-- Thallasemia,... --}}
+      <div class="col s5">
+        <label for="">Thallasemia</label>
+        <input type="text" name="Thallasemia" placeholder="Thallasemia">
+      </div>
+      <div class="col s7">
+        <label for="">ภาวะแทรกซ้อนระหว่างตั้งครรภ์</label>
+        <input type="text" name="preg_sym" placeholder="ภาวะแทรกซ้อนระหว่างตั้งครรภ์">
+      </div>
+
+      <div class="col s12">
+        <label for="">Past Hx : (โรคประจำตัวม, อุบัติเหตุ, การใช้ยา, การผ่าตัด)</label>
+        <input type="text" name="Past_Hx" placeholder="Past-Hx">
+      </div>
+      <div class="col s12">
+        <label for="">ประวัติการแพ้ยา :</label>
+        <input type="text" name="med_Allergic" placeholder="ประวัติแพ้ยา">
+      </div>
+
+      {{!-- Personal Hx --}}
+      <div class="col s12">
+        <label for="">Personal Hx :</label>
+        <p>
+          <div class="col s3">
+            <div class="col s6">
+              <input type="checkbox" class="filled-in" id="personalhx-1" name="smoke" />
+              <label for="personalhx-1">บุหรี่</label>
+            </div>
+            <div class="col s6" id="personal-smoke">
+              <label for="">บุหรี่</label>
+              <input type="text" name="personal_smoke_text">
+            </div>
+          </div>
+          <div class="col s3">
+            <div class="col s6">
+              <input type="checkbox" class="filled-in" id="personalhx-2" name="alcohol" />
+              <label for="personalhx-2">สุรา</label>
+            </div>
+            <div class="col s6" id="personal-alcohol">
+              <label for="">สุรา</label>
+              <input type="text" name="personal_alcohol_text">
+            </div>
+          </div>
+          <div class="col s3">
+            <div class="col s6">
+              <input type="checkbox" class="filled-in" id="personalhx-3" name="drug" />
+              <label for="personalhx-3">ยา</label>
+            </div>
+            <div class="col s6" id="personal-drug">
+              <label for="">ยา</label>
+              <input type="text" name="personal_drug_text">
+            </div>
+          </div>
+        </p>
+        <div class="col s3">
+          <label for="">อาชีพ</label>
+          <input type="text" name="job" placeholder="อาชีพ" value="{{patient.job}}">
+        </div>
+      </div>
+
+      {{!-- Family Hx --}}
+      <div class="col s12">
+        <label for="">Family Hx :</label>
+        <p>
+          <div class="col s1">
+            <input type="checkbox" class="filled-in" id="filled-in-box1" name="DM" />
+            <label for="filled-in-box1">DM</label>
+          </div>
+          <div class="col s1">
+            <input type="checkbox" class="filled-in" id="filled-in-box2" name="HT" />
+            <label for="filled-in-box2">HT</label>
+          </div>
+          <div class="col s1">
+            <input type="checkbox" class="filled-in" id="filled-in-box3" name="Asthma" />
+            <label for="filled-in-box3">Asthma</label>
+          </div>
+          <div class="col s5">
+            <div class="col s4">
+              <input type="checkbox" class="filled-in" id="filled-in-box4" name="Renal_disease" />
+              <label for="filled-in-box4">Renal disease</label>
+            </div>
+            <div class="col s4">
+              <input type="checkbox" class="filled-in" id="filled-in-box5" name="Heart_disease" />
+              <label for="filled-in-box5">Heart disease</label>
+            </div>
+            <div class="col s4">
+              <input type="checkbox" class="filled-in" id="filled-in-box6" name="Blood_disease" />
+              <label for="filled-in-box6">Blood disease</label>
+            </div>
+          </div>
+          <div class="col s1">
+            <input type="checkbox" class="filled-in" id="filled-in-box7" name="Other_disease" />
+            <label for="filled-in-box7">Other</label>
+          </div>
+        </p>
+        <div class="col s2" id="family-other">
+          <label for="">Other</label>
+          <input type="text" name="family_Other">
+        </div>
+      </div>
+
+      <div class="row"></div>
+
+      {{!-- Social Hx --}}
+      <div class="col s12">
+        <label for="">Social Hx :</label>
+        <input type="text" name="Social_Hx" placeholder="Social Hx">
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <div class="col s6">
+            <label for="">Review of System :</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s3">
+        <div class="col s6">
+          <label for="">HEENT</label>
+          <select id="HEENT" name="HEENT">
+            <option value="0">HEENT</option>
+            <option value="ปกติ">ปกติ</option>
+            <option value="ไม่ปกติ">ไม่ปกติ</option>
+            <option value="ระบุ">ระบุ</option>
+          </select>
+        </div>
+        <div class="col s6" id="heent-other">
+          <label for="">ระบุ</label>
+          <input type="text" name="heent_Other">
+        </div>
+      </div>
+
+      <div class="col s3">
+        <div class="col s6">
+          <label for="">Respiratory</label>
+          <select id="Respiratory" name="Respiratory">
+            <option value="0">Respiratory</option>
+            <option value="ปกติ">ปกติ</option>
+            <option value="ไม่ปกติ">ไม่ปกติ</option>
+            <option value="ระบุ">ระบุ</option>
+          </select>
+        </div>
+        <div class="col s6" id="respiratory-other">
+          <label for="">ระบุ</label>
+          <input type="text" name="respiratory_Other">
+        </div>
+      </div>
+
+      <div class="col s3">
+        <div class="col s6">
+          <label for="">Cardiovascular</label>
+          <select id="Cardiovascular" name="Cardiovascular">
+            <option value="0">Cardiovascular</option>
+            <option value="ปกติ">ปกติ</option>
+            <option value="ไม่ปกติ">ไม่ปกติ</option>
+            <option value="ระบุ">ระบุ</option>
+          </select>
+        </div>
+        <div class="col s6" id="cardio-other">
+          <label for="">ระบุ</label>
+          <input type="text" name="cardiovascular_Other">
+        </div>
+      </div>
+
+      <div class="col s3">
+        <div class="col s6">
+          <label for="">Gastrointestital</label>
+          <select id="Gastrointestital" name="Gastrointestital">
+            <option value="0">Gastrointestital</option>
+            <option value="ปกติ">ปกติ</option>
+            <option value="ไม่ปกติ">ไม่ปกติ</option>
+            <option value="ระบุ">ระบุ</option>
+          </select>
+        </div>
+        <div class="col s6" id="gastro-other">
+          <label for="">ระบุ</label>
+          <input type="text" name="gastro_Other">
+        </div>
+      </div>
+
+      <div class="col s3">
+        <div class="col s6">
+          <label for="">Genito urinary</label>
+          <select id="Genito" name="Genito">
+            <option value="0">Genito urinary</option>
+            <option value="ปกติ">ปกติ</option>
+            <option value="ไม่ปกติ">ไม่ปกติ</option>
+            <option value="ระบุ">ระบุ</option>
+          </select>
+        </div>
+        <div class="col s6" id="genito-other">
+          <label for="">ระบุ</label>
+          <input type="text" name="genito_Other">
+        </div>
+      </div>
+
+      <div class="col s3">
+        <div class="col s6">
+          <label for="">Gynecological</label>
+          <select id="Gynecological" name="Gynecological">
+            <option value="0">Gynecological</option>
+            <option value="ปกติ">ปกติ</option>
+            <option value="ไม่ปกติ">ไม่ปกติ</option>
+            <option value="ระบุ">ระบุ</option>
+          </select>
+        </div>
+        <div class="col s6" id="gynecological-other">
+          <label for="">ระบุ</label>
+          <input type="text" name="gynecological_Other">
+        </div>
+      </div>
+
+      <div class="col s3">
+        <div class="col s6">
+          <label for="">Neurology</label>
+          <select id="Neurology" name="Neurology">
+            <option value="0">Neurology</option>
+            <option value="ปกติ">ปกติ</option>
+            <option value="ไม่ปกติ">ไม่ปกติ</option>
+            <option value="ระบุ">ระบุ</option>
+          </select>
+        </div>
+        <div class="col s6" id="neurology-other">
+          <label for="">ระบุ</label>
+          <input type="text" name="neurology_Other">
+        </div>
+      </div>
+
+      <div class="col s3">
+        <div class="col s6">
+          <label for="">Other</label>
+          <select id="Other" name="Other">
+            <option value="0">Other</option>
+            <option value="ปกติ">ปกติ</option>
+            <option value="ไม่ปกติ">ไม่ปกติ</option>
+            <option value="ระบุ">ระบุ</option>
+          </select>
+        </div>
+        <div class="col s6" id="other-other">
+          <label for="">ระบุ</label>
+          <input type="text" name="other_Other">
+        </div>
+      </div>
+
+      {{!-- V/S --}}
+      <div class="row">
+        <div class="col s12">
+          <div class="col s6">
+            <label for="">V/S :</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12">
+        <div class="col s2">
+          <label for="">T (c)</label>
+          <input type="text" name="T" placeholder="T (c)">
+        </div>
+        <div class="col s2">
+          <label for="">PR /min</label>
+          <input type="text" name="PR" placeholder="PR /min">
+        </div>
+        <div class="col s2">
+          <label for="">RR /min</label>
+          <input type="text" name="RR" placeholder="RR /min">
+        </div>
+        <div class="col s2">
+          <label for="">BP (mmHg)</label>
+          <input type="text" name="BP" placeholder="BP (mmHg)">
+        </div>
+        <div class="col s2">
+          <label for="">BW (kgs)</label>
+          <input type="text" name="BW" placeholder="BW (kgs)">
+        </div>
+        <div class="col s2">
+          <label for="">HT (cms)</label>
+          <input type="text" name="HT" placeholder="HT (cms)">
+        </div>
+      </div>
+
+      {{!-- GA --}}
+      <div class="col s2">
+        <label for="">GA:</label>
+        <input type="text" name="GA" placeholder="GA" value="{{patient.GA}}">
+      </div>
+      <div class="col s2">
+        <label for="">Skin:</label>
+        <input type="text" name="Skin" placeholder="Skin">
+      </div>
+      <div class="col s2">
+        <label for="">HEENT</label>
+        <input type="text" name="HEENT_lower" placeholder="HEENT">
+      </div>
+      <div class="col s2">
+        <label for="">Heart</label>
+        <input type="text" name="Heart" placeholder="Heart">
+      </div>
+      <div class="col s2">
+        <label for="">Lung</label>
+        <input type="text" name="Lung" placeholder="Lung">
+      </div>
+      <div class="col s2">
+        <label for="">Abdomen</label>
+        <input type="text" name="Abdomen" placeholder="Abdomen">
+      </div>
+      <div class="col s2">
+        <label for="">Extremities</label>
+        <input type="text" name="Extremities" placeholder="Extremities">
+      </div>
+      <div class="col s2">
+        <label for="">Neuro</label>
+        <input type="text" name="Neuro" placeholder="Neuro">
+      </div>
+      <div class="col s2">
+        <label for="">Others</label>
+        <input type="text" name="Others" placeholder="Others">
+      </div>
+
+      <div class="row"></div>
+
+
+      {{!-- การตั้งครรภ์ --}}
+      <div class="row">
+        <div class="col s12">
+          <div class="col s6">
+            <label for="">การตั้งครรภ์</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col 12">
+        <div class="col s2">
+          <label for="">HF</label>
+          <input type="text" name="HF" placeholder="HF">
+        </div>
+        <div class="col s2">
+          <label for="">Position</label>
+          <input type="text" name="Position" placeholder="Position">
+        </div>
+        <div class="col s2">
+          <label for="">FHS</label>
+          <input type="text" name="FHS" placeholder="FHS">
+        </div>
+        <div class="col s2">
+          <label for="">Cervix dilate (cms)</label>
+          <input type="text" name="Cervix" placeholder="Cervix dilate">
+        </div>
+        <div class="col s2">
+          <label for="">Eff %</label>
+          <input type="text" name="Eff" placeholder="Eff %">
+        </div>
+        <div class="row"></div>
+        <div class="col s2">
+          <label for="">Station</label>
+          <input type="text" name="Station" placeholder="Station">
+        </div>
+        <div class="col s2">
+          <label for="">Membrane</label>
+          <input type="text" name="Membrane" placeholder="Membrane">
+        </div>
+        <div class="col s8">
+          <div class="col s2">
+            <label for="">AF</label>
+            <input type="text" name="AF" placeholder="AF">
+          </div>
+          <div class="col s2">
+            <label for="">at</label>
+            <p style="color: gray"></p>
+          </div>
+          <div class="col s2">
+            <label for="">น.</label>
+            <input type="text" name="AF_time" placeholder="น.">
+          </div>
+          <div class="col s6">
+            <label for="">Others</label>
+            <input type="text" name="Preg_other" placeholder="Others">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12">
+          <div class="col s6">
+            <label for="">Investigation :</label>
+          </div>
+        </div>
+      </div>
+
+      {{!-- Investigation --}}
+      <div class="col s12">
+        <div class="col s3">
+          <label for="">Hct %</label>
+          <input type="text" name="Inves_hct" placeholder="Hct %">
+        </div>
+        <div class="col s3">
+          <label for="">Urine Albumin</label>
+          <input type="text" name="Urine_Albumin" placeholder="Urine Albumin">
+        </div>
+        <div class="col s3">
+          <label for="">Urine Sugar</label>
+          <input type="text" name="Urine_Sugar" placeholder="Urine Sugar">
+        </div>
+        <div class="col s3">
+          <label for="">Others:</label>
+          <input type="text" name="Inves_other" placeholder="Others">
+        </div>
+        <div class="col s12">
+          <label for="">Plan for Treatment :</label>
+          <input type="text" name="plan" placeholder="Plan for Treatment">
+        </div>
+      </div>
+
+      <div class="row"></div>
+
+      {{!-- Doctor/Staff --}}
+      <div class="col s8"></div>
+      <div class="col s2">
+        <label for="">แพทย์</label>
+        <input type="text" name="doctor_sign" placeholder="แพทย์">
+      </div>
+      {{!--
+      <div class="col s1" style="padding-left:2em;">
+        <label for="">/</label>
+      </div> --}}
+      <div class="col s2">
+        <label for="">(staff)</label>
+        <input type="text" name="staff_sign" placeholder="staff">
+      </div>
+
+      {{!-- Bio --}}
+      <div class="col s6">
+        <label for="">ชื่อ-สกุล</label>
+        <input type="text" name="patient_name" placeholder="ชื่อ-สกุล" value="{{patient.name}}" required>
+      </div>
+      <div class="col s3">
+        <label for="">อายุ (ปี)</label>
+        <input type="number" name="patient_age" placeholder="อายุ (ปี)" value="{{patient.age}}" required>
+      </div>
+      <div class="col s1">
+        <label for="">ward</label>
+        <input type="text" name="ward" placeholder="ward" value="{{patient.ward}}">
+      </div> 
+      <div class="col s2">
+        <label for="">ห้องคลอด</label>
+        <input type="text" name="room" placeholder="ห้องคลอด">
+      </div>
+
+      <div class="col s3">
+        <label for="">HN</label>
+        <input type="text" name="HN" placeholder="HN" value="{{patient.HN}}">
+      </div>
+      <div class="col s3">
+        <label for="">AN</label>
+        <input type="text" name="AN" placeholder="AN">
+      </div>
+      <div class="col s6">
+        <label for="">แพทย์</label>
+        <input type="text" name="doctor_assigned" placeholder="แพทย์" required>
+      </div>
+      <div class="row"></div>
+      <div class="col s10"></div>
+      <div class="col s2">
+        <button class="btn waves-effect waves-light right" type="submit" name="action">Save</button>
+      </div>
+      <div class="row"></div>
+    </form>
+    <!-- End Form -->
+  </div>
+</div>

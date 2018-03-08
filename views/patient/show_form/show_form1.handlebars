@@ -1,0 +1,1057 @@
+{{!-- แบบรายงานประวัติ-ตรวจร่างกายผู้ป่วยทางสูติกรรม --}}
+<br>
+<div class="row z-depth-3 no-print" id="form1">
+  <div class="col s12 show">
+
+    {{!-- Form --}}
+
+    <div class="row"></div>
+    <div class="col s12 center">
+      <span style="font-size: 125%; font-weight: bold;">
+        <i class="fa fa-pencil-alt"></i> แบบรายงานประวัติ-ตรวจร่างกายผู้ป่วยทางสูติกรรม</span>
+    </div>
+    <div class="row"></div>
+    <div class="row"></div>
+    {{!-- First Line --}}
+    <div class="col s3">
+      <label for="">วัน-เดือน-ปี ที่บันทึก</label>
+      <input type="text" name="recordDate" placeholder="วัน-เดือน-ปี ที่บันทึก" value="{{form1.recordDate}}" readonly>
+    </div>
+    <div class="col s3">
+      <label for="">เวลา</label>
+      <input type="text" name="recordTime" placeholder="เวลา" value="{{form1.recordTime}}" readonly>
+    </div>
+    <div class="col s6">
+      <div class="col s6">
+        <label for="">ประวัติได้จาก</label>
+        <select id="checkFrom" name="history" disabled>
+          {{#select form1.history}}
+          <option value="1">ผู้ป่วย</option>
+          <option value="2">ญาติ</option>
+          <option value="3">อื่นๆ</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s6" id="other">
+        <label for="">อื่นๆ</label>
+        <input type="text" name="history_Other" value="{{form1.history_Other}}" readonly>
+      </div>
+    </div>
+
+    {{!-- CC --}}
+    <div class="col s12">
+      <label for="">CC</label>
+      <input type="text" name="CC" placeholder="CC" value="{{form1.CC}}" readonly>
+    </div>
+
+    {{!-- PI --}}
+    <div class="col s12">
+      <label for="">PI</label>
+      <input type="text" name="PI" placeholder="PI" value="{{form1.PI}}" readonly>
+    </div>
+
+    {{!-- G ... --}}
+    <div class="col s1">
+      <label for="">G</label>
+      <input type="text" name="G" placeholder="G" value="{{patient.G}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">P</label>
+      <input type="text" name="P" placeholder="P" value="{{patient.P}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">A</label>
+      <input type="text" name="A" placeholder="A" value="{{patient.A}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">L</label>
+      <input type="text" name="L" placeholder="L" value="{{patient.L}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">Last</label>
+      <input type="text" name="Last" placeholder="Last" value="{{form1.Last}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">LMP</label>
+      <input type="text" name="LMP" placeholder="LMP" value="{{form1.LMP}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">EDC</label>
+      <input type="text" name="EDC" placeholder="EDC" value="{{form1.EDC}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">Preg (wks)</label>
+      <input type="text" name="Preg" placeholder="Preg (wks)" value="{{form1.Preg}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">ANC ที่</label>
+      <input type="text" name="ANC" placeholder="ANC" value="{{form1.ANC}}" readonly>
+    </div>
+
+    {{!-- First ANC ... --}}
+    <div class="col s2">
+      <label for="">First ANC at (wks)</label>
+      <input type="text" name="first_ANC" placeholder="First ANC at (wks)" value="{{form1.first_ANC}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">รวม (ครั้ง)</label>
+      <input type="text" name="count_ANC" placeholder="รวม (ครั้ง)" value="{{form1.count_ANC}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">TT:</label>
+      <select name="TT" disabled>
+        {{#select form1.TT}}
+        <option value="0">TT</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        {{/select}}
+      </select>
+    </div>
+    <div class="col s2">
+      <label for="">...</label>
+      <select name="TT_more" disabled>
+        {{#select form1.TT_more}}
+        <option value="0">เลือก</option>
+        <option value="1">กระตุ้น</option>
+        <option value="2">ครบมาก่อน</option>
+        <option value="3">no</option>
+        {{/select}}
+      </select>
+    </div>
+
+    <div class="row"></div>
+
+    {{!-- VDRl ... --}}
+    <div class="col s1">
+      <label for="">VDRL</label>
+      <input type="text" name="VDRL" placeholder="VDRL" value="{{form1.VDRL}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">HbsAg</label>
+      <input type="text" name="HbsAg" placeholder="HbsAg" value="{{form1.HbsAg}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">HbeAg</label>
+      <input type="text" name="HbeAg" placeholder="HbeAg" value="{{form1.HbeAg}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">AntiHIV</label>
+      <input type="text" name="AntiHIV" placeholder="AntiHIV" value="{{form1.AntiHIV}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">Hct%</label>
+      <input type="text" name="Hct" placeholder="Hct%" value="{{form1.Hct}}" disabled>
+    </div>
+    <div class="col s2">
+      <label for="">Blood group</label>
+      <input type="text" name="Blood_Group" placeholder="Blood group" value="{{form1.Blood_Group}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">Rh</label>
+      <input type="text" name="Rh" placeholder="Rh" value="{{form1.Rh}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">OF</label>
+      <input type="text" name="OF" placeholder="OF" value="{{form1.OF}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">DCIP</label>
+      <input type="text" name="DCIP" placeholder="DCIP" value="{{form1.DCIP}}" readonly>
+    </div>
+
+    {{!-- Thallasemia,... --}}
+    <div class="col s5">
+      <label for="">Thallasemia</label>
+      <input type="text" name="Thallasemia" placeholder="Thallasemia" value="{{form1.Thallasemia}}" readonly>
+    </div>
+    <div class="col s7">
+      <label for="">ภาวะแทรกซ้อนระหว่างตั้งครรภ์</label>
+      <input type="text" name="preg_sym" placeholder="ภาวะแทรกซ้อนระหว่างตั้งครรภ์" value="{{form1.preg_sym}}" readonly>
+    </div>
+
+    <div class="col s12">
+      <label for="">Past Hx : (โรคประจำตัวม, อุบัติเหตุ, การใช้ยา, การผ่าตัด)</label>
+      <input type="text" name="Past_Hx" placeholder="Past-Hx" value="{{form1.Past_Hx}}" readonly>
+    </div>
+    <div class="col s12">
+      <label for="">ประวัติการแพ้ยา :</label>
+      <input type="text" name="med_Allergic" placeholder="ประวัติแพ้ยา" value="{{form1.med_Allergic}}" readonly>
+    </div>
+
+    {{!-- Personal Hx --}}
+    <div class="col s12">
+      <label for="">Personal Hx :</label>
+      <p>
+        <div class="col s3">
+          <div class="col s6">
+            <input type="checkbox" class="filled-in" id="personalhx-1" name="smoke" {{#if form1.smoke}} checked="checked" {{/if}} disabled>
+            <label for="personalhx-1">บุหรี่</label>
+          </div>
+          <div class="col s6" id="personal-smoke">
+            <label for="">บุหรี่</label>
+            <input type="text" name="personal_smoke_text" value="{{form1.personal_smoke_text}}" readonly>
+          </div>
+        </div>
+        <div class="col s3">
+          <div class="col s6">
+            <input type="checkbox" class="filled-in" id="personalhx-2" name="alcohol" {{#if form1.alcohol}} checked="checked" {{/if}}/
+              disabled>
+            <label for="personalhx-2">สุรา</label>
+          </div>
+          <div class="col s6" id="personal-alcohol">
+            <label for="">สุรา</label>
+            <input type="text" name="personal_alcohol_text" value="{{form1.personal_alcohol_text}}" readonly>
+          </div>
+        </div>
+        <div class="col s3">
+          <div class="col s6">
+            <input type="checkbox" class="filled-in" id="personalhx-3" name="drug" {{#if form1.drug}} checked="checked" {{/if}} disabled>
+            <label for="personalhx-3">ยา</label>
+          </div>
+          <div class="col s6" id="personal-drug">
+            <label for="">ยา</label>
+            <input type="text" name="personal_drug_text" value="{{form1.personal_drug_text}}" readonly>
+          </div>
+        </div>
+      </p>
+      <div class="col s3">
+        <label for="">อาชีพ</label>
+        <input type="text" name="job" placeholder="อาชีพ" value="{{patient.job}}" readonly>
+      </div>
+    </div>
+
+    {{!-- Family Hx --}}
+    <div class="col s12">
+      <label for="">Family Hx :</label>
+      <p>
+        <div class="col s1">
+          <input type="checkbox" class="filled-in" id="filled-in-box1" name="DM" {{#if form1.DM}} checked="checked" {{/if}} disabled>
+          <label for="filled-in-box1">DM</label>
+        </div>
+        <div class="col s1">
+          <input type="checkbox" class="filled-in" id="filled-in-box2" name="HT" {{#if form1.HT}} checked="checked" {{/if}} disabled>
+          <label for="filled-in-box2">HT</label>
+        </div>
+        <div class="col s1">
+          <input type="checkbox" class="filled-in" id="filled-in-box3" name="Asthma" {{#if form1.Asthma}} checked="checked" {{/if}}
+            disabled>
+          <label for="filled-in-box3">Asthma</label>
+        </div>
+        <div class="col s5">
+          <div class="col s4">
+            <input type="checkbox" class="filled-in" id="filled-in-box4" name="Renal_disease" {{#if form1.Renal_disease}} checked="checked"
+              {{/if}} disabled>
+            <label for="filled-in-box4">Renal disease</label>
+          </div>
+          <div class="col s4">
+            <input type="checkbox" class="filled-in" id="filled-in-box5" name="Heart_disease" {{#if form1.Heart_disease}} checked="checked"
+              {{/if}} disabled>
+            <label for="filled-in-box5">Heart disease</label>
+          </div>
+          <div class="col s4">
+            <input type="checkbox" class="filled-in" id="filled-in-box6" name="Blood_disease" {{#if form1.Blood_disease}} checked="checked"
+              {{/if}} disabled>
+            <label for="filled-in-box6">Blood disease</label>
+          </div>
+        </div>
+        <div class="col s1">
+          <input type="checkbox" class="filled-in" id="filled-in-box7" name="Other_disease" {{#if form1.Other_disease}} checked="checked"
+            {{/if}} disabled>
+          <label for="filled-in-box7">Other</label>
+        </div>
+      </p>
+      <div class="col s2" id="family-other">
+        <label for="">Other</label>
+        <input type="text" name="family_Other" value="{{form1.family_Other}}" readonly>
+      </div>
+    </div>
+
+    <div class="row"></div>
+
+    {{!-- Social Hx --}}
+    <div class="col s12">
+      <label for="">Social Hx :</label>
+      <input type="text" name="Social_Hx" placeholder="Social Hx" value="{{form1.Social_Hx}}" readonly>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="col s6">
+          <label for="">Review of System :</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s3">
+      <div class="col s6">
+        <label for="">HEENT</label>
+        <select id="HEENT" name="HEENT" disabled>
+          {{#select form1.HEENT}}
+          <option value="0">HEENT</option>
+          <option value="ปกติ">ปกติ</option>
+          <option value="ไม่ปกติ">ไม่ปกติ</option>
+          <option value="ระบุ">ระบุ</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s6" id="heent-other">
+        <label for="">ระบุ</label>
+        <input type="text" name="heent_Other" value="{{form1.heent_Other}}" readonly>
+      </div>
+    </div>
+
+    <div class="col s3">
+      <div class="col s6">
+        <label for="">Respiratory</label>
+        <select id="Respiratory" name="Respiratory" disabled>
+          {{#select form1.Respiratory}}
+          <option value="0">Respiratory</option>
+          <option value="ปกติ">ปกติ</option>
+          <option value="ไม่ปกติ">ไม่ปกติ</option>
+          <option value="ระบุ">ระบุ</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s6" id="respiratory-other">
+        <label for="">ระบุ</label>
+        <input type="text" name="respiratory_Other" value="{{form1.respiratory_Other}}" readonly>
+      </div>
+    </div>
+
+    <div class="col s3">
+      <div class="col s6">
+        <label for="">Cardiovascular</label>
+        <select id="Cardiovascular" name="Cardiovascular" disabled>
+          {{#select form1.Cardiovascular}}
+          <option value="0">Cardiovascular</option>
+          <option value="ปกติ">ปกติ</option>
+          <option value="ไม่ปกติ">ไม่ปกติ</option>
+          <option value="ระบุ">ระบุ</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s6" id="cardio-other">
+        <label for="">ระบุ</label>
+        <input type="text" name="cardiovascular_Other" value="{{form1.cardiovascular_Other}}" readonly>
+      </div>
+    </div>
+
+    <div class="col s3">
+      <div class="col s6">
+        <label for="">Gastrointestital</label>
+        <select id="Gastrointestital" name="Gastrointestital" disabled>
+          {{#select form1.Gastrointestital}}
+          <option value="0">Gastrointestital</option>
+          <option value="ปกติ">ปกติ</option>
+          <option value="ไม่ปกติ">ไม่ปกติ</option>
+          <option value="ระบุ">ระบุ</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s6" id="gastro-other">
+        <label for="">ระบุ</label>
+        <input type="text" name="gastro_Other" value="{{form1.gastro_Other}}" readonly>
+      </div>
+    </div>
+
+    <div class="col s3">
+      <div class="col s6">
+        <label for="">Genito urinary</label>
+        <select id="Genito" name="Genito" disabled>
+          {{#select form1.Genito}}
+          <option value="0">Genito urinary</option>
+          <option value="ปกติ">ปกติ</option>
+          <option value="ไม่ปกติ">ไม่ปกติ</option>
+          <option value="ระบุ">ระบุ</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s6" id="genito-other">
+        <label for="">ระบุ</label>
+        <input type="text" name="genito_Other" value="{{form1.genito_Other}}" readonly>
+      </div>
+    </div>
+
+    <div class="col s3">
+      <div class="col s6">
+        <label for="">Gynecological</label>
+        <select id="Gynecological" name="Gynecological" disabled>
+          {{#select form1.Gynecological}}
+          <option value="0">Gynecological</option>
+          <option value="ปกติ">ปกติ</option>
+          <option value="ไม่ปกติ">ไม่ปกติ</option>
+          <option value="ระบุ">ระบุ</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s6" id="gynecological-other">
+        <label for="">ระบุ</label>
+        <input type="text" name="gynecological_Other" value="{{form1.gynecological_Other}}" readonly>
+      </div>
+    </div>
+
+    <div class="col s3">
+      <div class="col s6">
+        <label for="">Neurology</label>
+        <select id="Neurology" name="Neurology" disabled>
+          {{#select form1.Neurology}}
+          <option value="0">Neurology</option>
+          <option value="ปกติ">ปกติ</option>
+          <option value="ไม่ปกติ">ไม่ปกติ</option>
+          <option value="ระบุ">ระบุ</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s6" id="neurology-other">
+        <label for="">ระบุ</label>
+        <input type="text" name="neurology_Other" value="{{form1.neurology_Other}}" readonly>
+      </div>
+    </div>
+
+    <div class="col s3">
+      <div class="col s6">
+        <label for="">Other</label>
+        <select id="Other" name="Other" disabled>
+          {{#select form1.Other}}
+          <option value="0">Other</option>
+          <option value="ปกติ">ปกติ</option>
+          <option value="ไม่ปกติ">ไม่ปกติ</option>
+          <option value="ระบุ">ระบุ</option>
+          {{/select}}
+        </select>
+      </div>
+      <div class="col s6" id="other-other">
+        <label for="">ระบุ</label>
+        <input type="text" name="other_Other" value="{{form1.other_Other}}" readonly>
+      </div>
+    </div>
+
+    {{!-- V/S --}}
+    <div class="row">
+      <div class="col s12">
+        <div class="col s6">
+          <label for="">V/S :</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12">
+      <div class="col s2">
+        <label for="">T (c)</label>
+        <input type="text" name="T" placeholder="T (c)" value="{{form1.T}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">PR /min</label>
+        <input type="text" name="PR" placeholder="PR /min" value="{{form1.PR}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">RR /min</label>
+        <input type="text" name="RR" placeholder="RR /min" value="{{form1.RR}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">BP (mmHg)</label>
+        <input type="text" name="BP" placeholder="BP (mmHg)" value="{{form1.BP}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">BW (kgs)</label>
+        <input type="text" name="BW" placeholder="BW (kgs)" value="{{form1.BW}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">HT (cms)</label>
+        <input type="text" name="HT" placeholder="HT (cms)" value="{{form1.HT}}" readonly>
+      </div>
+    </div>
+
+    {{!-- GA --}}
+    <div class="col s2">
+      <label for="">GA:</label>
+      <input type="text" name="GA" placeholder="GA" value="{{patient.GA}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">Skin:</label>
+      <input type="text" name="Skin" placeholder="Skin" value="{{form1.Skin}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">HEENT</label>
+      <input type="text" name="HEENT_lower" placeholder="HEENT" value="{{form1.HEENT_lower}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">Heart</label>
+      <input type="text" name="Heart" placeholder="Heart" value="{{form1.Heart}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">Lung</label>
+      <input type="text" name="Lung" placeholder="Lung" value="{{form1.Lung}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">Abdomen</label>
+      <input type="text" name="Abdomen" placeholder="Abdomen" value="{{form1.Abdomen}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">Extremities</label>
+      <input type="text" name="Extremities" placeholder="Extremities" value="{{form1.Extremities}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">Neuro</label>
+      <input type="text" name="Neuro" placeholder="Neuro" value="{{form1.Neuro}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">Others</label>
+      <input type="text" name="Others" placeholder="Others" value="{{form1.Others}}" readonly>
+    </div>
+
+    <div class="row"></div>
+
+
+    {{!-- การตั้งครรภ์ --}}
+    <div class="row">
+      <div class="col s12">
+        <div class="col s6">
+          <label for="">การตั้งครรภ์</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col 12">
+      <div class="col s2">
+        <label for="">HF</label>
+        <input type="text" name="HF" placeholder="HF" value="{{form1.HF}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">Position</label>
+        <input type="text" name="Position" placeholder="Position" value="{{form1.Position}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">FHS</label>
+        <input type="text" name="FHS" placeholder="FHS" value="{{form1.FHS}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">Cervix dilate (cms)</label>
+        <input type="text" name="Cervix" placeholder="Cervix dilate" value="{{form1.Cervix}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">Eff %</label>
+        <input type="text" name="Eff" placeholder="Eff %" value="{{form1.Eff}}" readonly>
+      </div>
+      <div class="row"></div>
+      <div class="col s2">
+        <label for="">Station</label>
+        <input type="text" name="Station" placeholder="Station" value="{{form1.Station}}" readonly>
+      </div>
+      <div class="col s2">
+        <label for="">Membrane</label>
+        <input type="text" name="Membrane" placeholder="Membrane" value="{{form1.Membrane}}" readonly>
+      </div>
+      <div class="col s8">
+        <div class="col s2">
+          <label for="">AF</label>
+          <input type="text" name="AF" placeholder="AF" value="{{form1.AF}}" readonly>
+        </div>
+        <div class="col s2">
+          <label for="">at</label>
+          <p style="color: gray"></p>
+        </div>
+        <div class="col s2">
+          <label for="">น.</label>
+          <input type="text" name="AF_time" placeholder="น." value="{{form1.AF_time}}" readonly>
+        </div>
+        <div class="col s6">
+          <label for="">Others</label>
+          <input type="text" name="Preg_other" placeholder="Others" value="{{form1.Preg_other}}" readonly>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="col s6">
+          <label for="">Investigation :</label>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Investigation --}}
+    <div class="col s12">
+      <div class="col s3">
+        <label for="">Hct %</label>
+        <input type="text" name="Inves_hct" placeholder="Hct %" value="{{form1.Inves_hct}}" readonly>
+      </div>
+      <div class="col s3">
+        <label for="">Urine Albumin</label>
+        <input type="text" name="Urine_Albumin" placeholder="Urine Albumin" value="{{form1.Urine_Albumin}}" readonly>
+      </div>
+      <div class="col s3">
+        <label for="">Urine Sugar</label>
+        <input type="text" name="Urine_Sugar" placeholder="Urine Sugar" value="{{form1.Urine_Sugar}}" readonly>
+      </div>
+      <div class="col s3">
+        <label for="">Others:</label>
+        <input type="text" name="Inves_other" placeholder="Others" value="{{form1.Inves_other}}" readonly>
+      </div>
+      <div class="col s12">
+        <label for="">Imp :</label>
+        <input type="text" name="imp" placeholder="Imp" value="{{form1.imp}}" readonly>
+      </div>
+      <div class="col s12">
+        <label for="">Plan for Treatment :</label>
+        <input type="text" name="plan" placeholder="Plan for Treatment" value="{{form1.plan}}" readonly>
+      </div>
+    </div>
+
+    <div class="row"></div>
+
+    {{!-- Doctor/Staff --}}
+    <div class="col s8"></div>
+    <div class="col s2">
+      <label for="">แพทย์</label>
+      <input type="text" name="doctor_sign" placeholder="แพทย์" value="{{form1.doctor_sign}}" readonly>
+    </div>
+    {{!--
+    <div class="col s1" style="padding-left:2em;">
+      <label for="">/</label>
+    </div> --}}
+    <div class="col s2">
+      <label for="">(staff)</label>
+      <input type="text" name="staff_sign" placeholder="staff" value="{{form1.staff_sign}}" readonly>
+    </div>
+
+    {{!-- Bio --}}
+    <div class="col s6">
+      <label for="">ชื่อ-สกุล</label>
+      <input type="text" name="patient_name" placeholder="ชื่อ-สกุล" value="{{patient.name}}" readonly>
+    </div>
+    <div class="col s3">
+      <label for="">อายุ (ปี)</label>
+      <input type="number" name="patient_age" placeholder="อายุ (ปี)" value="{{patient.age}}" readonly>
+    </div>
+    <div class="col s1">
+      <label for="">ward</label>
+      <input type="text" name="ward" placeholder="ward" value="{{patient.ward}}" readonly>
+    </div>
+    <div class="col s2">
+      <label for="">ห้องคลอด</label>
+      <input type="text" name="room" placeholder="ห้องคลอด" value="{{form1.room}}" readonly>
+    </div>
+
+    <div class="col s3">
+      <label for="">HN</label>
+      <input type="text" name="HN" placeholder="HN" value="{{patient.HN}}" readonly>
+    </div>
+    <div class="col s3">
+      <label for="">AN</label>
+      <input type="text" name="AN" placeholder="AN" value="{{form1.AN}}" readonly>
+    </div>
+    <div class="col s6">
+      <label for="">แพทย์</label>
+      <input type="text" name="doctor_assigned" placeholder="แพทย์" value="{{form1.doctor_assigned}}" readonly>
+    </div>
+    <div class="row"></div>
+
+
+    <div class="col s12">
+      <div class="left">
+        <a class="btn waves-effect waves-light right blue" href="javascript:print('แบบรายงานประวัติ')" name="action">
+          <i class="fa fa-print"></i> Print</a>
+      </div>
+      <div class="right">
+        <a class="btn waves-effect waves-light right red" href="javascript:history.back()" name="action">Back</a>
+      </div>
+    </div>
+
+
+
+    <div class="row"></div>
+
+    <!-- End Form -->
+  </div>
+</div>
+
+
+{{!-- PRINT FORM1 --}}
+
+<div class="row"></div>
+
+<div class="printContainer print printForm">
+  <div class="title">
+    <p>แบบรายงานประวัติ-ตรวจร่างกายผู้ป่วยทางสูติกรรม</p>
+  </div>
+  <div class="form1-line1">
+    <p>
+      วัน-เดือน-ปี ที่บันทึก
+    </p>
+    <p class="value">2nd September, 2018</p>
+    <p>เวลา</p>
+    <p class="value">11:11</p>
+    <p>ประวัติได้จาก&nbsp;
+      <input type="checkbox" name="fromPatientHimself" id="patientHimself" {{setChecked '1' form1.history}}>
+      <label for="gotHistoryFrom">ผู้ป่วย</label>
+      &nbsp;
+      <input type="checkbox" name="fromRelative" id="fromRelatives" {{setChecked '2' form1.history}}>
+      <label for="fromRelative">ญาติ</label>
+      &nbsp;
+      <input type="checkbox" name="fromOther" id="fromOther" {{setChecked '3' form1.history}}>
+      <label for="fromOther">อื่นๆ</label>
+    </p>
+    <p>อื่นๆ</p>
+    <p class="value">คนอื่น</p>
+  </div>
+  <div class="form1-line2and3">
+    <p>CC :</p>
+    <p class="value">{{form1.CC}}</p>
+  </div>
+  <div class="form1-line2and3">
+    <p>PI :</p>
+    <p class="value">{{form1.PI}}</p>
+  </div>
+  <div class="form1-line4" style="margin-bottom: 5px;">
+    <p>G</p>
+    <p class="value">{{form1.G}}</p>
+    <p>P</p>
+    <p class="value">{{form1.P}}</p>
+    <p>A</p>
+    <p class="value">{{form1.A}}</p>
+    <p>L</p>
+    <p class="value">{{form1.L}}</p>
+    <p>Last</p>
+    <p class="value">{{form1.Last}}</p>
+    <p>ปี</p>
+    <p>LMP</p>
+    <p class="value">{{form1.LMP}}</p>
+    <p>EDC</p>
+    <p class="value">{{form1.EDC}}</p>
+    <p>Preg</p>
+    <p class="value">{{form1.Preg}}</p>
+    <p>wks</p>
+    <p>ANC ที่</p>
+    <p class="value">{{form1.ANC}}</p>
+  </div>
+  <div class="form1-line5">
+    <p>First ANC at</p>
+    <p class="value">{{form1.first_ANC}}</p>
+    <p>wks</p>
+    <p>รวม</p>
+    <p class="value">{{form1.count_ANC}}</p>
+    <p>ครั้ง</p>
+    <p>
+      TT:&nbsp;
+      <input type="checkbox" name="TT1" id="TT1" {{setChecked '1' form1.TT}}>
+      <label for="TT1">1</label>&nbsp;
+      <input type="checkbox" name="TT2" id="TT2" {{setChecked '2' form1.TT}}>
+      <label for="TT2">2</label>&nbsp;
+      <input type="checkbox" name="TT3" id="TT3" {{setChecked '3' form1.TT}}>
+      <label for="TT3">3</label>
+      &nbsp;&nbsp;
+      <input type="checkbox" name="catalyst" id="catalyst" {{setChecked '1' form1.TT_more}}>
+      <label for="catalyst">กระตุ้น</label>&nbsp;
+      <input type="checkbox" name="completeBeforeArrival" id="completeBeforeArrival" {{setChecked '2' form1.TT_more}}>
+      <label for="completeBeforeArrival">ครบมาก่อน</label>&nbsp;
+      <input type="checkbox" name="no" id="no" {{setChecked '3' form1.TT_more}}>
+      <label for="np">no</label>
+    </p>
+  </div>
+  <div class="form1-line6" style="margin-bottom: 5px;">
+    <p>VDRL</p>
+    <p class="value">{{form1.VDRL}}</p>
+    <p>HbsAg</p>
+    <p class="value">{{form1.HbsAg}}</p>
+    <p>HbeAg</p>
+    <p class="value">{{form1.HbeAg}}</p>
+    <p>AntiHIV</p>
+    <p class="value">{{form1.AntiHIV}}</p>
+    <p>Hct%</p>
+    <p class="value">{{form1.Hct}}</p>
+    <p>Blood Group</p>
+    <p class="value">{{form1.Blood_Group}}</p>
+    <p>Rh</p>
+    <p class="value">{{form1.Rh}}</p>
+    <p>OF</p>
+    <p class="value">{{form1.OF}}</p>
+    <p>DCIP</p>
+    <p class="value">{{form1.DCIP}}</p>
+  </div>
+  <div class="form1-line7" style="margin-bottom: 5px;">
+    <p>Thallasemia</p>
+    <p class="value">{{form1.Thallasemia}}</p>
+    <p>ภาวะแทรกซ้อนระหว่างตั้งครรภ์</p>
+    <p class="value">{{form1.preg_sym}}</p>
+  </div>
+  <div class="form1-line8" style="margin-bottom: 5px;">
+    <p>Past Hx : (โรคประจำตัว, อุบัติเหตุ, การใช้ยา, การผ่าตัด)</p>
+    <p class="value">{{form1.Past_Hx}}</p>
+  </div>
+  <div class="form1-line9" style="margin-bottom: 5px;">
+    <p>ประวัติการแพ้ยา :</p>
+    <p class="value">{{form1.med_Allergic}}</p>
+  </div>
+  <div class="form1-line10" style="margin-bottom: 5px;">
+    <p>Personal Hx :</p>
+    <p>
+      <input type="checkbox" name="personalHx_smoke" id="personalHx_smoke" {{#if form1.smoke}} checked="checked" {{/if}}>
+      <label for="personalHx_smoke">บุหรี่</label>
+    </p>
+    <p class="value">{{form1.personal_smoke_text}}</p>
+    <p>
+      <input type="checkbox" name="personalHx_alcohol" id="personalHx_alcohol" {{#if form1.alcohol}} checked="checked" {{/if}}>
+      <label for="personalHx_alcohol">สุรา</label>
+    </p>
+    <p class="value">{{form1.personal_alcohol_text}}</p>
+    <p>
+      <input type="checkbox" name="personalHx_drug" id="personalHx_drug" {{#if form1.drug}} checked="checked" {{/if}}>
+      <label for="personalHx_drug">ยา</label>
+    </p>
+    <p class="value">{{form1.personal_drug_text}}</p>
+    <p>อาชีพ</p>
+    <p class="value">{{form1.job}}</p>
+  </div>
+  <div class="form1-line11" style="margin-bottom: 5px;">
+    <p>
+      Family Hx :
+      <input type="checkbox" name="familyHx_DM" id="familyHx_DM" {{#if form1.DM}} checked="checked" {{/if}}>
+      <label for="familyHx_DM">DM</label> &nbsp;
+      <input type="checkbox" name="familyHx_HT" id="familyHx_HT" {{#if form1.HT}} checked="checked" {{/if}}>
+      <label for="familyHx_HT">HT</label>&nbsp;
+      <input type="checkbox" name="familyHx_Asthma" id="familyHx_Asthma" {{#if form1.Asthma}} checked="checked" {{/if}}>
+      <label for="familyHx_Asthma">Asthma</label>&nbsp;
+      <input type="checkbox" name="familyHx_Renal_disease" id="familyHx_Renal_disease" {{#if form1.Renal_disease}} checked="checked"
+        {{/if}}>
+      <label for="familyHx_Renal_disease">Renal disease</label>&nbsp;
+      <input type="checkbox" name="familyHx_Heart_disease" id="familyHx_Heart_disease" {{#if form1.Heart_disease}} checked="checked"
+        {{/if}}>
+      <label for="familyHx_Heart_disease">Heart disease</label>&nbsp;
+      <input type="checkbox" name="familyHx_Blood_disease" id="familyHx_Blood_disease" {{#if form1.Blood_disease}} checked="checked"
+        {{/if}}>
+      <label for="familyHx_Blood_disease">Blood disease</label>&nbsp;
+      <input type="checkbox" name="familyHx_Other" id="familyHx_Other" {{#if form1.Other_disease}} checked="checked" {{/if}}>
+      <label for="familyHx_Other">Other</label>
+    </p>
+    <p class="value">{{form1.family_Other}}</p>
+  </div>
+  <div class="form1-line12" style="margin-bottom:15px;">
+    <p>Social Hx :</p>
+    <p class="value">{{form1.Social_Hx}}</p>
+  </div>
+  <div style="margin-bottom: 5px;">
+    <p >
+      <table class="form1">
+        <thead>
+          <tr>
+            <th>Review of System</th>
+            <th>ปกติ</th>
+            <th>ไม่ปกติ</th>
+            <th>ระบุ</th>
+            <th>Review of System</th>
+            <th>ปกติ</th>
+            <th>ไม่ปกติ</th>
+            <th>ระบุ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HEENT</td>
+            <td>
+              <img src="{{tableValue 'ปกติ' form1.HEENT}} " style='width:20px;'>
+            </td>
+            <td>
+              <img src="{{tableValue 'ไม่ปกติ' form1.HEENT}} " style='width:20px;'>
+            </td>
+            <td>{{form1.heent_Other}}</td>
+            <td>Genito Urinary</td>
+            <td>
+              <img src="{{tableValue 'ปกติ' form1.Genito }} " style='width:20px;'>
+            </td>
+            <td>
+              <img src="{{tableValue 'ไม่ปกติ' form1.Genito}} " style='width:20px;'>
+            </td>
+            <td>{{form1.genito_Other}}</td>
+          </tr>
+          <tr>
+            <td>Respiratory</td>
+            <td>
+              <img src="{{tableValue 'ปกติ' form1.Respiratory}} " style='width:20px;'>
+            </td>
+            <td>
+              <img src="{{tableValue 'ไม่ปกติ' form1.Respiratory}} " style='width:20px;'>
+            </td>
+            <td>{{form1.respiratory_Other}}</td>
+            <td>Gynecological</td>
+            <td>
+              <img src="{{tableValue 'ปกติ' form1.Gynecological}} " style='width:20px;'>
+            </td>
+            <td>
+              <img src="{{tableValue 'ไม่ปกติ' form1.Gynecological}} " style='width:20px;'>
+            </td>
+            <td>{{form1.gynecological_Other}}</td>
+          </tr>
+          <tr>
+            <td>Cardiovascular</td>
+            <td>
+              <img src="{{tableValue 'ปกติ' form1.Cardiovascular}} " style='width:20px;'>
+            </td>
+            <td>
+              <img src="{{tableValue 'ไม่ปกติ' form1.Cardiovascular}} " style='width:20px;'>
+            </td>
+            <td>{{form1.cardiovascular_Other}}</td>
+            <td>Neurology</td>
+            <td>
+              <img src="{{tableValue 'ปกติ' form1.Neurology}} " style='width:20px;'>
+            </td>
+            <td>
+              <img src="{{tableValue 'ไม่ปกติ' form1.Neurology}} " style='width:20px;'>
+            </td>
+            <td>{{form1.neurology_Other}}</td>
+          </tr>
+          <tr>
+            <td>Gastrointestital</td>
+            <td>
+              <img src="{{tableValue 'ปกติ' form1.Gastrointestital}} " style='width:20px;'>
+            </td>
+            <td>
+              <img src="{{tableValue 'ไม่ปกติ' form1.Gastrointestital}} " style='width:20px;'>
+            </td>
+            <td>{{form1.gastro_Other}}</td>
+            <td>Neurology</td>
+            <td>
+              <img src="{{tableValue 'ปกติ' form1.Other}} " style='width:20px;'>
+            </td>
+            <td>
+              <img src="{{tableValue 'ไม่ปกติ' form1.Other}} " style='width:20px;'>
+            </td>
+            <td>{{form1.other_Other}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </p>
+  </div>
+  <div class="form1-line13" style="margin-bottom: 5px;">
+    <p>V/S : T</p>
+    <p class="value">{{form1.T}}</p>
+    <p>c,</p>
+    <p>PR</p>
+    <p class="value">{{form1.PR}}</p>
+    <p>/min,</p>
+    <p>RR</p>
+    <p class="value">{{form1.RR}}</p>
+    <p>/min,</p>
+    <p>BP</p>
+    <p class="value">{{form1.BP}}</p>
+    <p>mmHg,</p>
+    <p>BW</p>
+    <p class="value">{{form1.BW}}</p>
+    <p>kgs,</p>
+    <p>HT</p>
+    <p class="value">{{form1.HT}}</p>
+    <p>cms</p>
+  </div>
+  <div class="form1-line14">
+    <p>GA :</p>
+    <p class="value">{{form1.GA}}</p>
+    <p>Skin :</p>
+    <p class="value">{{form1.Skin}}</p>
+    <p></p>
+    <p style="text-decoration:underline;">การตรวจครรภ์</p>
+  </div>
+  <div class="form1-line15">
+    <p>HEENT</p>
+    <p class="value">{{form1.HEENT_lower}}</p>
+    <p></p>
+    <p>HF</p>
+    <p class="value">{{form1.HF}}</p>
+    <p>Position</p>
+    <p class="value">{{form1.Position}}</p>
+    <p>FHS</p>
+    <p class="value">{{form1.FHS}}</p>
+  </div>
+  <div class="form1-line16">
+    <p>Heart :</p>
+    <p class="value">{{form1.Heart}}</p>
+    <p></p>
+    <p>Cervix Dilate</p>
+    <p class="value">{{form1.Cervix}}</p>
+    <p>cms</p>
+    <p>Eff</p>
+    <p class="value">{{form1.Eff}}</p>
+    <p>%</p>
+  </div>
+  <div class="form1-line17">
+    <p>Lung :</p>
+    <p class="value">{{form1.Lung}}</p>
+    <p></p>
+    <p>Station</p>
+    <p class="value">{{form1.Station}}</p>
+    <p>Membrane</p>
+    <p class="value">{{form1.Membrane}}</p>
+  </div>
+  <div class="form1-line18">
+    <p>Abdomen :</p>
+    <p class="value">{{form1.Abdomen}}</p>
+    <p></p>
+    <p>AF</p>
+    <p class="value">{{form1.AF}}</p>
+    <p>at</p>
+    <p class="value">{{form1.AF_time}}</p>
+    <p>น.</p>
+  </div>
+  <div class="form1-line19">
+    <p>Extremities :</p>
+    <p class="value">{{form1.Extremities}}</p>
+    <p></p>
+    <p>Others :</p>
+    <p class="value">{{form1.Others}}</p>
+  </div>
+  <div class="form1-line20and21">
+    <p>Neuro &nbsp;:</p>
+    <p class="value">{{form1.Neuro}}</p>
+  </div>
+  <div class="form1-line20and21">
+    <p>Others :</p>
+    <p class="value">{{form1.Preg_other}}</p>
+  </div>
+  <div class="form1-line22">
+    <p>Investigation : Hct</p>
+    <p class="value">{{form1.Inves_hct}}</p>
+    <p>%</p>
+    <p>Urine Albumin</p>
+    <p class="value">{{form1.Urine_Albumin}}</p>
+    <p>Urine Sugar</p>
+    <p class="value">{{form1.Urine_Sugar}}</p>
+    <p>Others :</p>
+    <p class="value">{{form1.Inves_other}}</p>
+  </div>
+  <div class="form1-line23">
+    <p>Imp :</p>
+    <p class="value">{{form1.imp}}</p>
+  </div>
+  <div class="form1-line24" style="margin-bottom: 5px;">
+    <p>Plan for Treatment :</p>
+    <p class="value">{{form1.plan}}</p>
+  </div>
+  <div class="form1-line25" style="margin-bottom: 5px;">
+    <p></p>
+    <p>แพทย์</p>
+    <p class="value">{{form1.doctor_sign}}</p>
+    <p>/</p>
+    <p class="value">{{form1.staff_sign}}</p>
+    <p>(staff)</p>
+  </div>
+  <div class="form1-line26">
+    <p>ชื่อ-สกุล</p>
+    <p class="value">{{form1.patient_name}}</p>
+    <p>อายุ</p>
+    <p class="value">{{form1.patient_age}}</p>
+    <p>ปี</p>
+    <p>ward</p>
+    <p class="value">{{form1.ward}}</p>
+    <p>ห้องคลอด</p>
+    <p class="value">{{form1.room}}</p>
+  </div>
+  <div class="form1-line27">
+    <p>HN</p>
+    <p class="value">{{form1.HN}}</p>
+    <p>AN</p>
+    <p class="value">{{form1.AN}}</p>
+    <p>แพทย์</p>
+    <p class="value">{{form1.doctor_assigned}}</p>
+  </div>
+</div>
+</div>

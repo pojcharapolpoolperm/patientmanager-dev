@@ -1,0 +1,64 @@
+<div>
+
+  {{#if searched_Patient}}
+
+  <table class="striped z-depth-3" style="margin-bottom: 25px;">
+    <thead>
+      <tr>
+        <th>
+          <span class="dashboard-text">ชื่อ-สกุล</span>
+        </th>
+        <th>วันที่บันทึก</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each searched_Patient}}
+      <tr>
+        <td>
+          <a href="/patient/profile/{{_id}}" class="dashboard-text record-text">{{name}}</a>
+        </td>
+        <td>
+          <span class="record-text">{{formatDate date 'MMMM Do YYYY'}}</span>
+        </td>
+        <td class="center">
+          <a href="/patient/show/{{_id}}" class="btn-floating btn tooltipped" data-position="top" data-delay="20" data-tooltip="เพิ่มเติม">
+            <i class="material-icons">visibility</i>
+          </a>
+          <a href="/patient/edit/{{patient.id}}" class="btn-floating tooltipped" data-position="top" data-delay="20" data-tooltip="แก้ไข">
+            <i class="material-icons">edit</i>
+          </a>
+
+
+          <form action="/patient/profile/remove/{{_id}}?_method=DELETE" method="post" id="delete-form">
+            <input type="hidden" name="_method" value="DELETE">
+             <!-- Modal Trigger -->
+          <a class="waves-effect waves-light modal-trigger btn-floating red tooltipped right" data-position="top" data-delay="20" data-tooltip="ลบผู้ป่วย" href="#modal{{id}}" style="margin-right: 20px !important;"><i class="material-icons">delete</i></a>
+
+          <!-- Modal Structure -->
+          <div id="modal{{id}}" class="modal">
+            <div class="modal-content">
+              <h4>Delete Confirmation</h4>
+              <p style="font-size: 18px !important;">ยืนยันการลบผู้ป่วย {{name}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ตกลง</button>
+              <a class="modal-close waves-effect waves-green btn-flat" style="font-size: 18px;">ยกเลิก</a>
+            </div>
+          </div>
+            </button>
+
+          </form>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+  <p>No patients listed</p>
+  {{/if}}
+  <div class="row">
+    <div class="center">
+      <a class="btn waves-effect waves-light red" href="javascript:history.back()" name="action" >Back</a>
+    </div>
+  </div>
+</div>

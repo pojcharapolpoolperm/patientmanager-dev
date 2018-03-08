@@ -1,0 +1,179 @@
+<div class="row"></div>
+<div class="row">
+  <div class="col s3 m3"></div>
+  <div class="col s6 m6 z-depth-3 ">
+    <img src="/img/logo.png" class="logo">
+    <h4 class="center-align" style="font-family: Ekk;"><i class="fa fa-pencil-alt"></i> {{patient.name}}</h4>
+    <br>
+    <div class="row col s12 register">
+      <form action="/patient/edit/save/{{patient.id}}?_method=PUT" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="input-field col s6">
+          <input type="text" name="name" id="name" class="validate" value="{{patient.name}}" required>
+          <label for="name">ชื่อ-สกุล</label>
+        </div>
+        <div class="input-field col s2">
+          <input type="number" name="age" id="age" class="validate" value="{{patient.age}}" required>
+          <label for="age">อายุ</label>
+        </div>
+        <div class="input-field col s4">
+          <input type="text" name="job" id="job" value="{{patient.job}}" class="validate">
+          <label for="job">อาชีพ</label>
+        </div>
+
+        <div class="input-field col s3">
+          <input type="number" name="weight" id="weight" class="validate" value="{{patient.weight}}" required>
+          <label for="weight">น้ำหนัก (กก.)</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="number" name="height" id="height" class="validate" value="{{patient.height}}" required>
+          <label for="height">สูง (ซม.)</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="text" name="HN" id="HN" value="{{patient.HN}}" class="validate">
+          <label for="job">HN</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="text" name="ward" id="ward" value="{{patient.ward}}" class="validate">
+          <label for="ward">Ward</label>
+        </div>
+
+        <div class="input-field col s2">
+          <input type="text" name="G" id="G" value="{{patient.G}}">
+          <label for="G">G</label>
+        </div>
+        <div class="input-field col s2">
+
+          <input type="text" name="P" id="P" value="{{patient.P}}">
+          <label for="P">P</label>
+        </div>
+        <div class="input-field col s2">
+          <input type="text" name="A" id="A" value="{{patient.A}}">
+          <label for="A">A</label>
+        </div>
+        <div class="input-field col s2">
+          <input type="text" name="L" id="L" value="{{patient.L}}">
+          <label for="L">L</label>
+        </div>
+        <div class="input-field col s3">
+          <input type="text" name="GA" id="GA" value="{{patient.GA}}">
+          <label for="GA">GA (wks)</label>
+        </div>
+
+        <div class="input-field col s4">
+          <input type="text" name="addr1" id="addr1" class="validate" value="{{patient.addr1}}">
+          <label for="addr1">เลขที่</label>
+        </div>
+        <div class="input-field col s4">
+          <input type="text" name="addr2" id="addr2" value="{{patient.addr2}}">
+          <label for="addr2">หมู่/ถนน</label>
+        </div>
+        <div class="input-field col s4">
+          <label for="addr3">ตำบล</label>
+          <input type="text" name="addr3" id="addr3" value="{{patient.addr3}}">
+        </div>
+
+        <div class="input-field col s4">
+          <input type="text" name="addr4" id="addr4" value="{{patient.addr4}}">
+          <label for="addr4">อำเภอ</label>
+        </div>
+
+        <div class="input-field col s4">
+          <select id="addr5" name="addr5">
+            {{#select patient.addr5}}
+            <option value='กรุงเทพมหานคร'>กรุงเทพมหานคร</option>
+            <option value='กระบี่'>กระบี่</option>
+            <option value='กาญจนบุรี'>กาญจนบุรี</option>
+            <option value='กาฬสินธุ์'>กาฬสินธุ์</option>
+            <option value='กำแพงเพชร'>กำแพงเพชร</option>
+            <option value='ขอนแก่น'>ขอนแก่น</option>
+            <option value='จันทบุรี'>จันทบุรี</option>
+            <option value='ฉะเชิงเทรา'>ฉะเชิงเทรา</option>
+            <option value='ชลบุรี'>ชลบุรี</option>
+            <option value='ชัยนาท'>ชัยนาท</option>
+            <option value='ชัยภูมิ'>ชัยภูมิ</option>
+            <option value='ชุมพร'>ชุมพร</option>
+            <option value='เชียงราย'>เชียงราย</option>
+            <option value='เชียงใหม่'>เชียงใหม่</option>
+            <option value='ตรัง'>ตรัง</option>
+            <option value='ตราด'>ตราด</option>
+            <option value='ตาก'>ตาก</option>
+            <option value='นครนายก'>นครนายก</option>
+            <option value='นครปฐม'>นครปฐม</option>
+            <option value='นครพนม'>นครพนม</option>
+            <option value='นครราชสีมา'>นครราชสีมา</option>
+            <option value='นครศรีธรรมราช'>นครศรีธรรมราช</option>
+            <option value='นครสวรรค์'>นครสวรรค์</option>
+            <option value='นนทบุรี'>นนทบุรี</option>
+            <option value='นราธิวาส'>นราธิวาส</option>
+            <option value='น่าน'>น่าน</option>
+            <option value='บึงกาฬ'>บึงกาฬ</option>
+            <option value='บุรีรัมย์'>บุรีรัมย์</option>
+            <option value='ปทุมธานี'>ปทุมธานี</option>
+            <option value='ประจวบคีรีขันธ์'>ประจวบคีรีขันธ์</option>
+            <option value='ปราจีนบุรี'>ปราจีนบุรี</option>
+            <option value='ปัตตานี'>ปัตตานี</option>
+            <option value='พระนครศรีอยุธยา'>พระนครศรีอยุธยา</option>
+            <option value='พังงา'>พังงา</option>
+            <option value='พัทลุง'>พัทลุง</option>
+            <option value='พิจิตร'>พิจิตร</option>
+            <option value='พิษณุโลก'>พิษณุโลก</option>
+            <option value='เพชรบุรี'>เพชรบุรี</option>
+            <option value='เพชรบูรณ์'>เพชรบูรณ์</option>
+            <option value='แพร่'>แพร่</option>
+            <option value='พะเยา'>พะเยา</option>
+            <option value='ภูเก็ต'>ภูเก็ต</option>
+            <option value='มหาสารคาม'>มหาสารคาม</option>
+            <option value='มุกดาหาร'>มุกดาหาร</option>
+            <option value='แม่ฮ่องสอน'>แม่ฮ่องสอน</option>
+            <option value='ยะลา'>ยะลา</option>
+            <option value='ยโสธร'>ยโสธร</option>
+            <option value='ร้อยเอ็ด'>ร้อยเอ็ด</option>
+            <option value='ระนอง'>ระนอง</option>
+            <option value='ระยอง'>ระยอง</option>
+            <option value='ราชบุรี'>ราชบุรี</option>
+            <option value='ลพบุรี'>ลพบุรี</option>
+            <option value='ลำปาง'>ลำปาง</option>
+            <option value='ลำพูน'>ลำพูน</option>
+            <option value='เลย'>เลย</option>
+            <option value='ศรีสะเกษ'>ศรีสะเกษ</option>
+            <option value='สกลนคร'>สกลนคร</option>
+            <option value='สงขลา'>สงขลา</option>
+            <option value='สตูล'>สตูล</option>
+            <option value='สมุทรปราการ'>สมุทรปราการ</option>
+            <option value='สมุทรสงคราม'>สมุทรสงคราม</option>
+            <option value='สมุทรสาคร'>สมุทรสาคร</option>
+            <option value='สระแก้ว'>สระแก้ว</option>
+            <option value='สระบุรี'>สระบุรี</option>
+            <option value='สิงห์บุรี'>สิงห์บุรี</option>
+            <option value='สุโขทัย'>สุโขทัย</option>
+            <option value='สุพรรณบุรี'>สุพรรณบุรี</option>
+            <option value='สุราษฎร์ธานี'>สุราษฎร์ธานี</option>
+            <option value='สุรินทร์'>สุรินทร์</option>
+            <option value='หนองคาย'>หนองคาย</option>
+            <option value='หนองบัวลำภู'>หนองบัวลำภู</option>
+            <option value='อ่างทอง'>อ่างทอง</option>
+            <option value='อุดรธานี'>อุดรธานี</option>
+            <option value='อุทัยธานี'>อุทัยธานี</option>
+            <option value='อุตรดิตถ์'>อุตรดิตถ์</option>
+            <option value='อุบลราชธานี'>อุบลราชธานี</option>
+            <option value='อำนาจเจริญ'>อำนาจเจริญ</option>
+            {{/select}}
+          </select>
+          <label for="addr5">จังหวัด</label>
+        </div>
+        <div class="input-field col s4">
+          <input type="tel" name="phone" id="phone" value="{{patient.phone}}">
+          <label for="phone">โทรศัพท์</label>
+        </div>
+
+        <div class="row"></div>
+        <div class="right" style="margin-right:10px;">
+          <button class="btn waves-effect waves-light" type="submit" name="action">Update</button>
+          <a class="btn waves-effect waves-light red" href="javascript:history.back()" name="action">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col s3 m3"></div>
+</div>
